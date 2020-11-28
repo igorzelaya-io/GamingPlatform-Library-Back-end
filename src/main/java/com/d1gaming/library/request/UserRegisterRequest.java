@@ -2,6 +2,7 @@ package com.d1gaming.library.request;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -33,7 +34,7 @@ public class UserRegisterRequest {
 	@Email
 	private String userEmail;
 	
-	private List<Role> useRoles;
+	private List<String> userRoles;
 	
 	@JsonProperty
 	@NotBlank
@@ -83,12 +84,12 @@ public class UserRegisterRequest {
 		this.userEmail = userEmail;
 	}
 
-	public List<Role> getUseRoles() {
-		return useRoles;
+	public List<String> getUseRoles() {
+		return userRoles;
 	}
 
-	public void setUseRoles(List<Role> useRoles) {
-		this.useRoles = useRoles;
+	public void setUseRoles(List<String> userRoles) {
+		this.userRoles = userRoles;
 	}
 
 	public Map<String, Object> getUserBirthDate() {
@@ -97,6 +98,10 @@ public class UserRegisterRequest {
 
 	public void setUserBirthDate(Map<String, Object> userBirthDate) {
 		this.userBirthDate = userBirthDate;
+	}
+
+	public List<String> getAuthorities() {
+		return this.userRoles;
 	}
 	
 	

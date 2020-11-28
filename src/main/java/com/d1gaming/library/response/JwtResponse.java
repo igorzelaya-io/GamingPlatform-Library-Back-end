@@ -18,7 +18,7 @@ public class JwtResponse {
 	private String username;
 	
 	@JsonProperty
-	private Long id;
+	private String id;
 	
 	@JsonProperty
 	private String email;
@@ -26,9 +26,9 @@ public class JwtResponse {
 	@JsonProperty
 	private List<String> roles;
 	
-	public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
+	public JwtResponse(String accessToken, String userId, String username, String email, List<String> roles) {
 		this.token = accessToken;
-		this.id = id;
+		this.id = userId;
 		this.username = username;
 		this.email = email;
 		this.roles = roles;
@@ -50,11 +50,11 @@ public class JwtResponse {
 		this.type = tokenType;
 	}
 
-	public Long getId() {
-		return id;
+	public String getId() {
+		return this.id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
