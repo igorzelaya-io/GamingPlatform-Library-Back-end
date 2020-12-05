@@ -1,12 +1,13 @@
 package com.d1gaming.library.user;
-import javax.annotation.Nonnull;
+
+import javax.validation.constraints.NotBlank;
 
 public class UserAuthRequest {
 
-	@Nonnull
+	@NotBlank
 	private String userName; 
 	
-	@Nonnull
+	@NotBlank
 	private String userPassword;
 
 	public String getUserName() {

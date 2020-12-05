@@ -1,23 +1,19 @@
 package com.d1gaming.library.user;
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import com.d1gaming.library.role.Role;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
-public class User implements UserDetails {
+public class User {
 	
-	private static final long serialVersionUID = 1L;
-
+	
 	User(){
-	
+		super();
 	}
+	
 	@JsonProperty
 	private String userId;
 	
@@ -32,9 +28,6 @@ public class User implements UserDetails {
 	
 	@JsonProperty
 	private String userEmail;
-	
-	@JsonProperty
-	private int userRank;
 		
 	@JsonProperty
 	private UserStatus userStatusCode;
@@ -45,8 +38,6 @@ public class User implements UserDetails {
 	@JsonProperty
 	private Map<String,Object> userBilling;
 
-	private Collection<Role> userRoles;
-	
 	@JsonProperty
 	private String userCountry;
 	
@@ -59,27 +50,34 @@ public class User implements UserDetails {
 	@JsonProperty
 	private Map<String, Object> userBirthDate;
 	
-	private boolean isEnabled = true;
+	@JsonProperty
+	private List<Role> userRoles = new ArrayList<>();
 	
-	private Set<Role> authorities = new HashSet<>();
-	
-	public User(String userId, String userRealName, String userName ,String userPassword, String userEmail, int userRank, UserStatus statusCode, Collection<Role> userRoles,  Map<String,Object> userTeam,Map<String,Object> userBilling, String userCountry, int userTokens, double userCash, Map<String,Object> userBirthDate) {
+	public User(String userId, String userRealName, String userName ,String userPassword, String userEmail, UserStatus statusCode, Map<String,Object> userTeam, Map<String,Object> userBilling, String userCountry, int userTokens, double userCash, Map<String,Object> userBirthDate) {
 		this.userId = userId;
 		this.userName = userName;
 		this.userRealName = userRealName;
 		this.userPassword = userPassword;
 		this.userEmail = userEmail;
 		this.userCountry = userCountry;
-		this.userRoles = userRoles;
-		this.userRank = userRank;
 		this.userStatusCode = statusCode;
-		this.isEnabled = true;
 		this.userCash = userCash;
 		this.userTeam = userTeam;
 		this.userBilling = userBilling;
 		this.userBirthDate = userBirthDate;
 		this.userTokens = userTokens;
 	}
+	
+	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus,  String userCountry, Map<String, Object> userBirthDate) {
+		this.userRealName = userRealName;
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.userEmail = userEmail;
+		this.userStatusCode = userStatus;
+		this.userCountry = userCountry;
+		this.userBirthDate = userBirthDate;
+	}
+
 	public String getUserId() {
 		return userId;
 	}
@@ -127,13 +125,6 @@ public class User implements UserDetails {
 		return this.userStatusCode;
 	}
 	
-	public void setUserRank(int userRank) {
-		this.userRank = userRank;
-	}
-	
-	public int getUserRank() {
-		return this.userRank;
-	}
 	public Map<String,Object> getUserTeam() {
 		return userTeam;
 	}
@@ -182,37 +173,12 @@ public class User implements UserDetails {
 		this.userBirthDate = userBirthDate;
 	}
 	
-	@Override
-	public String toString() {
-		return "users";
+	public void setUserRoles(List<Role> userRoles) {
+		this.userRoles = userRoles;
 	}
 	
-	@Override
-	public boolean isAccountNonExpired() {
-		return isEnabled;
+	public List<Role> getUserRoles(){
+		return this.userRoles;
 	}
-	@Override
-	public boolean isAccountNonLocked() {
-		return isEnabled;
-	}
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return isEnabled;
-	}
-	@Override
-	public boolean isEnabled() {
-		return isEnabled;
-	}
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.authorities;
-	}
-	@Override
-	public String getPassword() {
-		return this.userPassword;
-	}
-	@Override
-	public String getUsername() {
-		return this.userName;
-	}
+	
 }

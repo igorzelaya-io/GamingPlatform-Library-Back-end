@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class Service {
+public class D1Service {
 
 	@JsonProperty
 	private String serviceId;
@@ -18,9 +18,15 @@ public class Service {
 	@JsonProperty
 	private String serviceDescription;
 	
-	Service(){
+	D1Service(){
 		
 	}
 	
-
+	public D1Service(ServiceChargeType serviceChargeType, double serviceChargeAmount,
+			String serviceDescription) {
+		super();
+		this.serviceChargeType = serviceChargeType;
+		this.serviceChargeAmount = serviceChargeAmount;
+		this.serviceDescription = serviceDescription;
+	}
 }

@@ -1,11 +1,11 @@
 package com.d1gaming.library.challenge;
+import java.time.Instant;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.d1gaming.library.team.Team;
 import com.d1gaming.library.user.User;
-import com.google.cloud.Timestamp;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class Challenge {
@@ -27,7 +27,7 @@ public class Challenge {
 	private ChallengeStatus challengeStatus;
 	
 	@JsonProperty
-	private Timestamp challengeDate;
+	private Instant challengeDate;
 	
 	@JsonProperty
 	private Map<String,Object> challengeHostPlayers;
@@ -47,7 +47,7 @@ public class Challenge {
 	@JsonProperty
 	private double challengeTokenFee;
 	
-	public Challenge(String challengeId, String challengeName, User challengeUserAdmin,ChallengeStatus challengeStatus, Timestamp challengeDate, Map<String,Object> challengeHost, Map<String, Object> challengeOpponent ,Team challengeHostTeam,Team challengeOpponentTeam, double challengeCashPrice, double challengeTokenFee) {
+	public Challenge(String challengeId, String challengeName, User challengeUserAdmin,ChallengeStatus challengeStatus, Instant challengeDate, Map<String,Object> challengeHost, Map<String, Object> challengeOpponent ,Team challengeHostTeam,Team challengeOpponentTeam, double challengeCashPrice, double challengeTokenFee) {
 		this.challengeId = challengeId;
 		this.challengeName = challengeName;
 		this.challengeUserAdmin = challengeUserAdmin;
@@ -93,11 +93,11 @@ public class Challenge {
 		this.challengeStatus = challengeStatus;
 	}
 
-	public Timestamp getChallengeDate() {
+	public Instant getChallengeDate() {
 		return challengeDate;
 	}
 
-	public void setChallengeDate(Timestamp challengeDate) {
+	public void setChallengeDate(Instant challengeDate) {
 		this.challengeDate = challengeDate;
 	}
 
