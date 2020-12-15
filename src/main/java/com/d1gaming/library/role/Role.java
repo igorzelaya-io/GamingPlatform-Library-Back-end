@@ -16,9 +16,12 @@ public class Role {
 	@JsonProperty
 	private ERole roleType;
 
-	public Role(String roleId, String roleName, ERole roleType) {
+	public Role() {
+		
+	}
+	
+	public Role(String roleName, ERole roleType) {
 		super();
-		this.roleId = roleId;
 		this.roleName = roleName;
 		this.roleType = roleType;
 	}

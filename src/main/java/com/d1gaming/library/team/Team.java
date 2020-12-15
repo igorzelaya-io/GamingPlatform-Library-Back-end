@@ -3,6 +3,8 @@ package com.d1gaming.library.team;
 import java.util.List;
 
 import com.d1gaming.library.challenge.Challenge;
+import com.d1gaming.library.image.ImageModel;
+import com.d1gaming.library.tournament.Tournament;
 import com.d1gaming.library.user.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -10,9 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 
 public class Team {
-	Team(){
 	
-	}
 	@JsonProperty
 	private String teamId;
 	
@@ -31,23 +31,44 @@ public class Team {
 	@JsonProperty
 	private List<Challenge> teamChallenges;
 	
-	//TEAMTOURNAMENT
+	@JsonProperty
+	private List<Tournament> teamTournaments;
 	
 	@JsonProperty
-	private User teamLeader;
+	private User teamModerator;
 
 	@JsonProperty
 	private String teamEmail;
+	
+	@JsonProperty
+	private List<TeamInviteRequest> teamRequests;
+	
+	@JsonProperty
+	private ImageModel teamImage;
+	
+	public Team(){
+		
+	}
 
-	public Team(String teamId, String teamCountry, String teamName, List<User> teamUsers, TeamStatus teamStatus, List<Challenge> teamChallenges, User teamLeader, String teamEmail) {
-		this.teamId = teamId;
+	public Team(String teamCountry, String teamName, List<User> teamUsers, TeamStatus teamStatus, List<Challenge> teamChallenges, User teamLeader, String teamEmail) {
 		this.teamCountry = teamCountry;
 		this.teamName = teamName;
 		this.teamUsers = teamUsers;
 		this.teamChallenges = teamChallenges;
-		this.teamLeader = teamLeader;
+		this.teamModerator = teamLeader;
 		this.teamEmail = teamEmail;
 		this.teamStatus = teamStatus;
+	}
+	
+	
+
+	public Team(String teamCountry, String teamName, TeamStatus teamStatus, User teamModerator, String teamEmail) {
+		super();
+		this.teamCountry = teamCountry;
+		this.teamName = teamName;
+		this.teamStatus = teamStatus;
+		this.teamModerator = teamModerator;
+		this.teamEmail = teamEmail;
 	}
 
 	public String getTeamId() {
@@ -99,11 +120,11 @@ public class Team {
 	}
 
 	public User getTeamLeader() {
-		return teamLeader;
+		return teamModerator;
 	}
 
 	public void setTeamLeader(User teamLeader) {
-		this.teamLeader = teamLeader;
+		this.teamModerator = teamLeader;
 	}
 
 	public String getTeamEmail() {
@@ -112,6 +133,30 @@ public class Team {
 
 	public void setTeamEmail(String teamEmail) {
 		this.teamEmail = teamEmail;
+	}
+
+	public List<Tournament> getTeamTournaments() {
+		return teamTournaments;
+	}
+
+	public void setTeamTournaments(List<Tournament> teamTournaments) {
+		this.teamTournaments = teamTournaments;
+	}
+
+	public List<TeamInviteRequest> getTeamRequests() {
+		return teamRequests;
+	}
+
+	public void setTeamRequests(List<TeamInviteRequest> teamRequests) {
+		this.teamRequests = teamRequests;
+	}
+
+	public ImageModel getTeamImage() {
+		return teamImage;
+	}
+
+	public void setTeamImage(ImageModel teamImage) {
+		this.teamImage = teamImage;
 	}
 
 }

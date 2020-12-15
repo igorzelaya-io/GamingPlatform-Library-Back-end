@@ -26,6 +26,10 @@ public class JwtResponse {
 	@JsonProperty
 	private List<String> roles;
 	
+	public JwtResponse(String accessToken) {
+		this.token = accessToken;
+	}
+	
 	public JwtResponse(String accessToken, String userId, String username, String email, List<String> roles) {
 		this.token = accessToken;
 		this.id = userId;
@@ -33,6 +37,12 @@ public class JwtResponse {
 		this.email = email;
 		this.roles = roles;
 	}
+	
+	public JwtResponse(String accessToken, String userId) {
+		this.token = accessToken;
+		this.id = userId;
+	}
+	
 
 	public String getAccessToken() {
 		return token;

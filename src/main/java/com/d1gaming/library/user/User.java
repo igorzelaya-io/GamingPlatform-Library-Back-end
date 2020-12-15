@@ -3,16 +3,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.d1gaming.library.image.ImageModel;
 import com.d1gaming.library.role.Role;
+import com.d1gaming.library.team.Team;
+import com.d1gaming.library.team.TeamInviteRequest;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 @JsonSerialize
 public class User {
-	
-	
-	User(){
-		super();
-	}
 	
 	@JsonProperty
 	private String userId;
@@ -33,7 +31,7 @@ public class User {
 	private UserStatus userStatusCode;
 	
 	@JsonProperty
-	private Map<String,Object> userTeam;
+	private List<Team> userTeams;
 	
 	@JsonProperty
 	private Map<String,Object> userBilling;
@@ -51,9 +49,20 @@ public class User {
 	private Map<String, Object> userBirthDate;
 	
 	@JsonProperty
+	private List<TeamInviteRequest> userTeamRequests;
+	
+	@JsonProperty
+	private ImageModel userImage;
+	
+	@JsonProperty
 	private List<Role> userRoles = new ArrayList<>();
 	
-	public User(String userId, String userRealName, String userName ,String userPassword, String userEmail, UserStatus statusCode, Map<String,Object> userTeam, Map<String,Object> userBilling, String userCountry, int userTokens, double userCash, Map<String,Object> userBirthDate) {
+	public User(){
+		super();
+	}
+	
+	public User(String userId, String userRealName, String userName ,String userPassword, String userEmail, UserStatus statusCode, List<Team> userTeam, 
+			Map<String,Object> userBilling, String userCountry, int userTokens, double userCash, Map<String,Object> userBirthDate) {
 		this.userId = userId;
 		this.userName = userName;
 		this.userRealName = userRealName;
@@ -62,7 +71,7 @@ public class User {
 		this.userCountry = userCountry;
 		this.userStatusCode = statusCode;
 		this.userCash = userCash;
-		this.userTeam = userTeam;
+		this.userTeams = userTeam;
 		this.userBilling = userBilling;
 		this.userBirthDate = userBirthDate;
 		this.userTokens = userTokens;
@@ -125,14 +134,6 @@ public class User {
 		return this.userStatusCode;
 	}
 	
-	public Map<String,Object> getUserTeam() {
-		return userTeam;
-	}
-
-	public void setUserTeam(Map<String,Object> userTeam) {
-		this.userTeam = userTeam;
-	}
-	
 	public Map<String,Object> getUserBilling() {
 		return this.userBilling;
 	}
@@ -179,6 +180,30 @@ public class User {
 	
 	public List<Role> getUserRoles(){
 		return this.userRoles;
+	}
+
+	public List<Team> getUserTeams() {
+		return userTeams;
+	}
+
+	public void setUserTeams(List<Team> userTeams) {
+		this.userTeams = userTeams;
+	}
+
+	public List<TeamInviteRequest> getUserTeamRequests() {
+		return userTeamRequests;
+	}
+
+	public void setUserTeamRequests(List<TeamInviteRequest> userTeamRequests) {
+		this.userTeamRequests = userTeamRequests;
+	}
+
+	public ImageModel getUserImage() {
+		return userImage;
+	}
+
+	public void setUserImage(ImageModel userImage) {
+		this.userImage = userImage;
 	}
 	
 }
