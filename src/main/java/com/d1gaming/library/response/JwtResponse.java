@@ -42,7 +42,6 @@ public class JwtResponse {
 		this.token = accessToken;
 		this.id = userId;
 	}
-	
 
 	public String getAccessToken() {
 		return token;

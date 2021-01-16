@@ -21,6 +21,9 @@ public class Tournament {
 	private List<Team> tournamentTeams;
 	
 	@JsonProperty
+	private int tournamentNumberOfTeams;
+	
+	@JsonProperty
 	private TournamentStatus tournamentStatus;
 	
 	@JsonProperty
@@ -31,9 +34,22 @@ public class Tournament {
 
 	@JsonProperty
 	private TournamentType tournamentType;
+		
+	@JsonProperty
+	private List<String> tournamentPlatforms;
+	
+	@JsonProperty
+	private double tournamentCashPrice;
+	
+	@JsonProperty
+	private int tournamentTokenEntryFee;
+	
+	@JsonProperty 
+	private String tournamentRegion;
+	
 	
 	public Tournament() {
-		
+		super();
 	}
 
 	public Tournament(String tournamentName, List<Team> tournamentTeams, TournamentStatus tournamentStatus,
@@ -102,5 +118,47 @@ public class Tournament {
 	public void setTournamentType(TournamentType tournamentType) {
 		this.tournamentType = tournamentType;
 	}
+
+	public int getTournamentNumberOfTeams() {
+		return tournamentNumberOfTeams;
+	}
+
+	public void setTournamentNumberOfTeams(int tournamentNumberOfTeams) {
+		this.tournamentNumberOfTeams = tournamentNumberOfTeams;
+	}
+
+	public List<String> getTournamentPlatforms() {
+		return tournamentPlatforms;
+	}
+
+	public void setTournamentPlatforms(List<String> tournamentPlatforms) {
+		this.tournamentPlatforms = tournamentPlatforms;
+	}
+
+	public double getTournamentCashPrice() {
+		return tournamentCashPrice;
+	}
+
+	public void setTournamentCashPrice(double tournamentCashPrice) {
+		this.tournamentCashPrice = tournamentCashPrice;
+	}
+
+	public int getTournamentTokenEntryFee() {
+		return tournamentTokenEntryFee;
+	}
+
+	public void setTournamentTokenEntryFee(int tournamentTokenEntryFee) {
+		this.tournamentTokenEntryFee = tournamentTokenEntryFee;
+	}
+
+	public String getTournamentRegion() {
+		return tournamentRegion;
+	}
+
+	public void setTournamentRegion(String tournamentRegion) {
+		this.tournamentRegion = tournamentRegion;
+	}
+	
+	
 	
 }

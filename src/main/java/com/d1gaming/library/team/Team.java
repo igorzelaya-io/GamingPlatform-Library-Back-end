@@ -50,7 +50,9 @@ public class Team {
 		
 	}
 
-	public Team(String teamCountry, String teamName, List<User> teamUsers, TeamStatus teamStatus, List<Challenge> teamChallenges, User teamLeader, String teamEmail) {
+	public Team(String teamCountry, String teamName, List<User> teamUsers, TeamStatus teamStatus, 
+				List<Challenge> teamChallenges, User teamLeader, String teamEmail) {
+		super();
 		this.teamCountry = teamCountry;
 		this.teamName = teamName;
 		this.teamUsers = teamUsers;
@@ -60,15 +62,12 @@ public class Team {
 		this.teamStatus = teamStatus;
 	}
 	
-	
-
-	public Team(String teamCountry, String teamName, TeamStatus teamStatus, User teamModerator, String teamEmail) {
-		super();
+	public Team(String teamName, String teamCountry, String teamEmail, TeamStatus teamStatus, User teamModerator) {
+		this.teamName = teamName; 
 		this.teamCountry = teamCountry;
-		this.teamName = teamName;
+		this.teamEmail = teamEmail;
 		this.teamStatus = teamStatus;
 		this.teamModerator = teamModerator;
-		this.teamEmail = teamEmail;
 	}
 
 	public String getTeamId() {

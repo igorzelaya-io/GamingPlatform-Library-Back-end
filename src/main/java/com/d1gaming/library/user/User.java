@@ -9,6 +9,7 @@ import com.d1gaming.library.team.Team;
 import com.d1gaming.library.team.TeamInviteRequest;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 @JsonSerialize
 public class User {
 	
@@ -63,6 +64,7 @@ public class User {
 	
 	public User(String userId, String userRealName, String userName ,String userPassword, String userEmail, UserStatus statusCode, List<Team> userTeam, 
 			Map<String,Object> userBilling, String userCountry, int userTokens, double userCash, Map<String,Object> userBirthDate) {
+		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.userRealName = userRealName;
@@ -78,6 +80,7 @@ public class User {
 	}
 	
 	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus,  String userCountry, Map<String, Object> userBirthDate) {
+		super();
 		this.userRealName = userRealName;
 		this.userName = userName;
 		this.userPassword = userPassword;
@@ -125,13 +128,6 @@ public class User {
 
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
-	}
-	
-	public void setStatusCode(UserStatus statusCode) {
-		this.userStatusCode = statusCode;
-	}
-	public UserStatus getStatusCode() {
-		return this.userStatusCode;
 	}
 	
 	public Map<String,Object> getUserBilling() {
@@ -205,5 +201,15 @@ public class User {
 	public void setUserImage(ImageModel userImage) {
 		this.userImage = userImage;
 	}
+
+	public UserStatus getUserStatusCode() {
+		return userStatusCode;
+	}
+
+	public void setUserStatusCode(UserStatus userStatusCode) {
+		this.userStatusCode = userStatusCode;
+	}
+	
+	
 	
 }
