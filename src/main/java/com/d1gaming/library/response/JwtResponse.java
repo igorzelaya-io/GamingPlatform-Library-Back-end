@@ -2,6 +2,7 @@ package com.d1gaming.library.response;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -11,19 +12,19 @@ public class JwtResponse {
 	@JsonProperty
 	private String token;
 	
-	@JsonProperty
+	@JsonIgnore
 	private String type = "Bearer";
 	
-	@JsonProperty
+	@JsonIgnore
 	private String username;
 	
 	@JsonProperty
 	private String id;
 	
-	@JsonProperty
+	@JsonIgnore
 	private String email;
 	
-	@JsonProperty
+	@JsonIgnore
 	private List<String> roles;
 	
 	public JwtResponse(String accessToken) {
@@ -47,6 +48,7 @@ public class JwtResponse {
 		return token;
 	}
 
+	@JsonIgnore
 	public void setAccessToken(String accessToken) {
 		this.token = accessToken;
 	}
@@ -55,6 +57,7 @@ public class JwtResponse {
 		return type;
 	}
 
+	@JsonIgnore
 	public void setTokenType(String tokenType) {
 		this.type = tokenType;
 	}
