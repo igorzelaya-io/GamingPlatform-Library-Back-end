@@ -89,6 +89,18 @@ public class User {
 		this.userCountry = userCountry;
 		this.userBirthDate = userBirthDate;
 	}
+	
+	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus, String userCountry, Map<String, Object> userBirthDate, double userCash, int userTokens) {
+		this.userRealName = userRealName; 
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.userEmail = userEmail;
+		this.userStatusCode = userStatus;
+		this.userCountry = userCountry;
+		this.userBirthDate = userBirthDate;
+		this.userCash = userCash;
+		this.userTokens = userTokens;
+	}
 
 	public String getUserId() {
 		return userId;
