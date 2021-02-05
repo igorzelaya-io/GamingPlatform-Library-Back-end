@@ -21,6 +21,9 @@ public class Tournament {
 	private List<Team> tournamentTeams;
 	
 	@JsonProperty
+	private int limitNumberOfTeams;
+	
+	@JsonProperty
 	private int tournamentNumberOfTeams;
 	
 	@JsonProperty
@@ -33,10 +36,10 @@ public class Tournament {
 	private Date tournamentDate;
 
 	@JsonProperty
-	private TournamentType tournamentType;
+	private TournamentMode tournamentType;
 		
 	@JsonProperty
-	private List<String> tournamentPlatforms;
+	private String tournamentPlatforms;
 	
 	@JsonProperty
 	private double tournamentCashPrice;
@@ -47,13 +50,22 @@ public class Tournament {
 	@JsonProperty 
 	private String tournamentRegion;
 	
+	@JsonProperty
+	private TournamentFormat tournamentFormat;
+	
+	@JsonProperty
+	private TournamentTeamSize tournametTeamSize;
+	
+	@JsonProperty
+	private String tournamentDescription;
+	
 	
 	public Tournament() {
 		super();
 	}
 
 	public Tournament(String tournamentName, List<Team> tournamentTeams, TournamentStatus tournamentStatus,
-			User tournamentModerator, Date tournamentDate, TournamentType tournamentType) {
+			User tournamentModerator, Date tournamentDate, TournamentMode tournamentType) {
 		super();
 		this.tournamentName = tournamentName;
 		this.tournamentTeams = tournamentTeams;
@@ -111,11 +123,11 @@ public class Tournament {
 		this.tournamentDate = tournamentDate;
 	}
 
-	public TournamentType getTournamentType() {
+	public TournamentMode getTournamentMode() {
 		return tournamentType;
 	}
 
-	public void setTournamentType(TournamentType tournamentType) {
+	public void setTournamentMode(TournamentMode tournamentType) {
 		this.tournamentType = tournamentType;
 	}
 
@@ -127,11 +139,11 @@ public class Tournament {
 		this.tournamentNumberOfTeams = tournamentNumberOfTeams;
 	}
 
-	public List<String> getTournamentPlatforms() {
+	public String getTournamentPlatforms() {
 		return tournamentPlatforms;
 	}
 
-	public void setTournamentPlatforms(List<String> tournamentPlatforms) {
+	public void setTournamentPlatforms(String tournamentPlatforms) {
 		this.tournamentPlatforms = tournamentPlatforms;
 	}
 
@@ -158,7 +170,37 @@ public class Tournament {
 	public void setTournamentRegion(String tournamentRegion) {
 		this.tournamentRegion = tournamentRegion;
 	}
-	
-	
+
+	public int getLimitNumberOfTeams() {
+		return limitNumberOfTeams;
+	}
+
+	public void setLimitNumberOfTeams(int limitNumberOfTeams) {
+		this.limitNumberOfTeams = limitNumberOfTeams;
+	}
+
+	public TournamentMode getTournamentType() {
+		return tournamentType;
+	}
+
+	public void setTournamentType(TournamentMode tournamentType) {
+		this.tournamentType = tournamentType;
+	}
+
+	public TournamentFormat getTournamentFormat() {
+		return tournamentFormat;
+	}
+
+	public void setTournamentFormat(TournamentFormat tournamentFormat) {
+		this.tournamentFormat = tournamentFormat;
+	}
+
+	public TournamentTeamSize getTournametTeamSize() {
+		return tournametTeamSize;
+	}
+
+	public void setTournametTeamSize(TournamentTeamSize tournametTeamSize) {
+		this.tournametTeamSize = tournametTeamSize;
+	}
 	
 }

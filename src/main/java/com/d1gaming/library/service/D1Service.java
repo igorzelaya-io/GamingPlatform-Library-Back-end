@@ -10,6 +10,9 @@ public class D1Service {
 	private String serviceId;
 	
 	@JsonProperty
+	private String serviceName;
+	
+	@JsonProperty
 	private ServiceChargeType serviceChargeType;
 
 	@JsonProperty
@@ -22,7 +25,7 @@ public class D1Service {
 		
 	}
 	
-	public D1Service(ServiceChargeType serviceChargeType, double serviceChargeAmount,
+	public D1Service(String serviceName, ServiceChargeType serviceChargeType, double serviceChargeAmount,
 			String serviceDescription) {
 		super();
 		this.serviceChargeType = serviceChargeType;
