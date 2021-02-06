@@ -59,6 +59,15 @@ public class Tournament {
 	@JsonProperty
 	private String tournamentDescription;
 	
+	@JsonProperty
+	private String tournamentGame;
+	
+	@JsonProperty
+	private String tournamentCodGameMode;
+	
+	@JsonProperty
+	private String tournamentMatchesNumber;
+	
 	
 	public Tournament() {
 		super();
@@ -201,6 +210,38 @@ public class Tournament {
 
 	public void setTournametTeamSize(TournamentTeamSize tournametTeamSize) {
 		this.tournametTeamSize = tournametTeamSize;
+	}
+
+	public String getTournamentDescription() {
+		return tournamentDescription;
+	}
+
+	public void setTournamentDescription(String tournamentDescription) {
+		this.tournamentDescription = tournamentDescription;
+	}
+
+	public String getTournamentGame() {
+		return tournamentGame;
+	}
+
+	public void setTournamentGame(String tournamentGame) {
+		this.tournamentGame = tournamentGame;
+	}
+
+	public String getTournamentCodGameMode() {
+		return tournamentCodGameMode;
+	}
+
+	public void setTournamentCodGameMode(String tournamentCodGameMode) {
+		this.tournamentCodGameMode = tournamentCodGameMode;
+	}
+
+	public String getTournamentMatchesNumber() {
+		return tournamentMatchesNumber;
+	}
+
+	public void setTournamentMatchesNumber(String tournamentMatchesNumber) {
+		this.tournamentMatchesNumber = tournamentMatchesNumber;
 	}
 	
 }
