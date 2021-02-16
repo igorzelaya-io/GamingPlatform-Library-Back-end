@@ -221,7 +221,4 @@ public class User {
 	public void setUserStatusCode(UserStatus userStatusCode) {
 		this.userStatusCode = userStatusCode;
 	}
-	
-	
-	
 }

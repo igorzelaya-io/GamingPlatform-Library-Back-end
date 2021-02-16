@@ -1,53 +1,36 @@
 package com.d1gaming.library.role;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.security.core.GrantedAuthority;
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 
 @JsonSerialize
-public class Role {
-	
-	@JsonProperty
-	private String roleId;
-	
-	@JsonProperty
-	private String roleName;
-	
-	@JsonProperty
-	private ERole roleType;
+public class Role implements GrantedAuthority {
 
+	private static final long serialVersionUID = 1L;
+
+	public static final String PLAYER = "PLAYER";
+	
+	public static final String ADMIN = "ADMIN";
+	
+	public static final String TOURNEY_ADMIN = "TOURNEY_ADMIN";
+	
+	public static final String CHALLENGE_ADMIN = "CHALLENGE_ADMIN";
+
+	private String authority;
+	
 	public Role() {
-		
+		super();
 	}
 	
-	public Role(String roleName, ERole roleType) {
-		super();
-		this.roleName = roleName;
-		this.roleType = roleType;
+	public Role(String authority) {
+		this.authority = authority;
 	}
-
-	public String getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
-	}
-
-	public String getRoleName() {
-		return roleName;
-	}
-
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
-	}
-
-	public ERole getRoleType() {
-		return roleType;
-	}
-
-	public void setRoleType(ERole roleType) {
-		this.roleType = roleType;
+	
+	@Override
+	public String getAuthority() {
+		return this.authority;
 	}
 
 

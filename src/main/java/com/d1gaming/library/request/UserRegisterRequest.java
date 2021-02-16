@@ -1,13 +1,11 @@
 package com.d1gaming.library.request;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
-import com.d1gaming.library.role.Role;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -34,7 +32,7 @@ public class UserRegisterRequest {
 	@Email
 	private String userEmail;
 	
-	private List<String> userRoles;
+	private Set<String> userRoles;
 	
 	@JsonProperty
 	@NotBlank
@@ -84,11 +82,11 @@ public class UserRegisterRequest {
 		this.userEmail = userEmail;
 	}
 
-	public List<String> getUseRoles() {
+	public Set<String> getUseRoles() {
 		return userRoles;
 	}
 
-	public void setUseRoles(List<String> userRoles) {
+	public void setUseRoles(Set<String> userRoles) {
 		this.userRoles = userRoles;
 	}
 
@@ -99,10 +97,4 @@ public class UserRegisterRequest {
 	public void setUserBirthDate(Map<String, Object> userBirthDate) {
 		this.userBirthDate = userBirthDate;
 	}
-
-	public List<String> getAuthorities() {
-		return this.userRoles;
-	}
-	
-	
 }

@@ -9,6 +9,8 @@ public class UserAuthRequest {
 	
 	@NotBlank
 	private String userPassword;
+	
+	
 
 	public String getUserName() {
 		return this.userName;
