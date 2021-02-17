@@ -32,12 +32,13 @@ public class UserRegisterRequest {
 	@Email
 	private String userEmail;
 	
-	private List<String> userRoles;
-	
 	@JsonProperty
 	@NotBlank
 	private Map<String, Object> userBirthDate;
 
+	@JsonProperty
+	private List<String> userRoles;
+	
 	public UserRegisterRequest() {
 		super();
 	}

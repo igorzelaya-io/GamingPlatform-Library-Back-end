@@ -2,6 +2,7 @@ package com.d1gaming.library.role;
 
 import org.springframework.security.core.GrantedAuthority;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 
@@ -18,6 +19,7 @@ public class Role implements GrantedAuthority {
 	
 	public static final String CHALLENGE_ADMIN = "CHALLENGE_ADMIN";
 
+	@JsonProperty
 	private String authority;
 	
 	public Role() {
@@ -31,6 +33,10 @@ public class Role implements GrantedAuthority {
 	@Override
 	public String getAuthority() {
 		return this.authority;
+	}
+	
+	public void setAuthority(String authority) {
+		this.authority = authority;
 	}
 
 
