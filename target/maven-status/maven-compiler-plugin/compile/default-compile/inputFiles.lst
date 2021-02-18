@@ -21,6 +21,7 @@
 /Users/igorzelaya/SoftwareDev/D1Gaming-Library-Back-end/src/main/java/com/d1gaming/library/response/MessageResponse.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-Library-Back-end/src/main/java/com/d1gaming/library/challenge/ChallengeStatus.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-Library-Back-end/src/main/java/com/d1gaming/library/image/ImageModel.java
+/Users/igorzelaya/SoftwareDev/D1Gaming-Library-Back-end/src/main/java/com/d1gaming/library/request/UserRolesModel.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-Library-Back-end/src/main/java/com/d1gaming/library/request/UserRegisterRequest.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-Library-Back-end/src/main/java/com/d1gaming/library/user/UserView.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-Library-Back-end/src/main/java/com/d1gaming/library/service/D1Service.java

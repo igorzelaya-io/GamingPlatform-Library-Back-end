@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.d1gaming.library.role.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UserDetailsImpl implements UserDetails {
@@ -40,6 +41,20 @@ public class UserDetailsImpl implements UserDetails {
 				.collect(Collectors.toList());
 		return new UserDetailsImpl(user.getUserId(), user.getUserName(), user.getUserPassword(),
 				user.getUserEmail(), authorities);
+	}
+	
+	public static User toUser(UserDetailsImpl userDetails) {
+		User user = new User();
+		user.setUserId(userDetails.getUserId());
+		user.setUserName(userDetails.getUsername());
+		user.setUserPassword(userDetails.getPassword());
+		Collection<? extends GrantedAuthority> authorities = userDetails.getAuthorities();
+		List<Role> userRoles = authorities.stream()
+										  .map(authority -> new Role(authority.getAuthority()))
+										  .collect(Collectors.toList());
+		user.setUserRoles(userRoles);
+		user.setUserEmail(userDetails.getUserEmail());
+		return user;
 	}
 	
 	public String getUserId() {
