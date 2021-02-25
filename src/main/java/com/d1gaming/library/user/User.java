@@ -58,6 +58,9 @@ public class User {
 	@JsonProperty
 	private List<Role> userRoles = new ArrayList<>();
 	
+	@JsonProperty
+	private List<UserTournament> userTournaments;
+	
 	public User(){
 		super();
 	}
@@ -220,5 +223,13 @@ public class User {
 
 	public void setUserStatusCode(UserStatus userStatusCode) {
 		this.userStatusCode = userStatusCode;
+	}
+
+	public List<UserTournament> getUserTournaments() {
+		return userTournaments;
+	}
+
+	public void setUserTournaments(List<UserTournament> userTournaments) {
+		this.userTournaments = userTournaments;
 	}
 }

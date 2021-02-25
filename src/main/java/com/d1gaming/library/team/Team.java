@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.d1gaming.library.challenge.Challenge;
 import com.d1gaming.library.image.ImageModel;
-import com.d1gaming.library.tournament.Tournament;
 import com.d1gaming.library.user.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -32,7 +31,7 @@ public class Team {
 	private List<Challenge> teamChallenges;
 	
 	@JsonProperty
-	private List<Tournament> teamTournaments;
+	private List<TeamTournament> teamTournaments;
 	
 	@JsonProperty
 	private User teamModerator;
@@ -134,11 +133,11 @@ public class Team {
 		this.teamEmail = teamEmail;
 	}
 
-	public List<Tournament> getTeamTournaments() {
+	public List<TeamTournament> getTeamTournaments() {
 		return teamTournaments;
 	}
 
-	public void setTeamTournaments(List<Tournament> teamTournaments) {
+	public void setTeamTournaments(List<TeamTournament> teamTournaments) {
 		this.teamTournaments = teamTournaments;
 	}
 
