@@ -21,7 +21,7 @@ public class Tournament {
 	private List<Team> tournamentTeams;
 	
 	@JsonProperty
-	private int limitNumberOfTeams;
+	private int tournamentLimitNumberOfTeams;
 	
 	@JsonProperty
 	private int tournamentNumberOfTeams;
@@ -36,7 +36,7 @@ public class Tournament {
 	private Date tournamentDate;
 
 	@JsonProperty
-	private TournamentMode tournamentType;
+	private TournamentMode tournamentGameMode;
 		
 	@JsonProperty
 	private String tournamentPlatforms;
@@ -45,7 +45,7 @@ public class Tournament {
 	private double tournamentCashPrice;
 	
 	@JsonProperty
-	private int tournamentTokenEntryFee;
+	private int tournamentEntryFee;
 	
 	@JsonProperty 
 	private String tournamentRegion;
@@ -54,7 +54,7 @@ public class Tournament {
 	private TournamentFormat tournamentFormat;
 	
 	@JsonProperty
-	private TournamentTeamSize tournametTeamSize;
+	private TournamentTeamSize tournamentTeamSize;
 	
 	@JsonProperty
 	private String tournamentDescription;
@@ -74,14 +74,14 @@ public class Tournament {
 	}
 
 	public Tournament(String tournamentName, List<Team> tournamentTeams, TournamentStatus tournamentStatus,
-			User tournamentModerator, Date tournamentDate, TournamentMode tournamentType) {
+			User tournamentModerator, Date tournamentDate, TournamentMode tournamentGameMode) {
 		super();
 		this.tournamentName = tournamentName;
 		this.tournamentTeams = tournamentTeams;
 		this.tournamentStatus = tournamentStatus;
 		this.tournamentModerator = tournamentModerator;
 		this.tournamentDate = tournamentDate;
-		this.tournamentType = tournamentType;
+		this.tournamentGameMode = tournamentGameMode;
 	}
 
 	public String getTournamentId() {
@@ -132,12 +132,12 @@ public class Tournament {
 		this.tournamentDate = tournamentDate;
 	}
 
-	public TournamentMode getTournamentMode() {
-		return tournamentType;
+	public TournamentMode getTournamentGameMode() {
+		return tournamentGameMode;
 	}
 
-	public void setTournamentMode(TournamentMode tournamentType) {
-		this.tournamentType = tournamentType;
+	public void setTournamentGameMode(TournamentMode tournamentType) {
+		this.tournamentGameMode = tournamentType;
 	}
 
 	public int getTournamentNumberOfTeams() {
@@ -165,11 +165,11 @@ public class Tournament {
 	}
 
 	public int getTournamentTokenEntryFee() {
-		return tournamentTokenEntryFee;
+		return tournamentEntryFee;
 	}
 
 	public void setTournamentTokenEntryFee(int tournamentTokenEntryFee) {
-		this.tournamentTokenEntryFee = tournamentTokenEntryFee;
+		this.tournamentEntryFee = tournamentTokenEntryFee;
 	}
 
 	public String getTournamentRegion() {
@@ -181,19 +181,19 @@ public class Tournament {
 	}
 
 	public int getLimitNumberOfTeams() {
-		return limitNumberOfTeams;
+		return tournamentLimitNumberOfTeams;
 	}
 
 	public void setLimitNumberOfTeams(int limitNumberOfTeams) {
-		this.limitNumberOfTeams = limitNumberOfTeams;
+		this.tournamentLimitNumberOfTeams = limitNumberOfTeams;
 	}
 
 	public TournamentMode getTournamentType() {
-		return tournamentType;
+		return tournamentGameMode;
 	}
 
 	public void setTournamentType(TournamentMode tournamentType) {
-		this.tournamentType = tournamentType;
+		this.tournamentGameMode = tournamentType;
 	}
 
 	public TournamentFormat getTournamentFormat() {
@@ -205,11 +205,11 @@ public class Tournament {
 	}
 
 	public TournamentTeamSize getTournametTeamSize() {
-		return tournametTeamSize;
+		return tournamentTeamSize;
 	}
 
 	public void setTournametTeamSize(TournamentTeamSize tournametTeamSize) {
-		this.tournametTeamSize = tournametTeamSize;
+		this.tournamentTeamSize = tournametTeamSize;
 	}
 
 	public String getTournamentDescription() {

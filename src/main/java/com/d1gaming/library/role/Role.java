@@ -18,6 +18,8 @@ public class Role implements GrantedAuthority {
 	public static final String TOURNEY_ADMIN = "TOURNEY_ADMIN";
 	
 	public static final String CHALLENGE_ADMIN = "CHALLENGE_ADMIN";
+	
+	public static final String TEAM_ADMIN = "TEAM_ADMIN";
 
 	@JsonProperty
 	private String authority;
