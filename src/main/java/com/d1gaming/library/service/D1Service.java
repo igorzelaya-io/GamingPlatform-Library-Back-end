@@ -17,6 +17,9 @@ public class D1Service {
 
 	@JsonProperty
 	private double serviceChargeAmount;
+	
+	@JsonProperty
+	private double serviceGivingAmount;
 
 	@JsonProperty
 	private String serviceDescription;
@@ -72,6 +75,13 @@ public class D1Service {
 	public void setServiceDescription(String serviceDescription) {
 		this.serviceDescription = serviceDescription;
 	}
-	
+
+	public double getServiceGivingAmount() {
+		return serviceGivingAmount;
+	}
+
+	public void setServiceGivingAmount(double serviceGivingAmount) {
+		this.serviceGivingAmount = serviceGivingAmount;
+	}
 	
 }
