@@ -1,5 +1,6 @@
 package com.d1gaming.library.user;
 
+import com.d1gaming.library.team.Team;
 import com.d1gaming.library.tournament.Tournament;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -14,6 +15,9 @@ public class UserTournament {
 	private Tournament userTournament;
 	
 	@JsonProperty
+	private Team userTournamentTeam;
+	
+	@JsonProperty
 	private int userTournamentMatchesWins;
 	
 	@JsonProperty
@@ -23,12 +27,13 @@ public class UserTournament {
 		super();
 	}
 	
-	public UserTournament(String userTournamentsId, Tournament userTournaments, int userTournamentMatchesWins, int userTournamentMatchesLosses) {
+	public UserTournament(String userTournamentsId, Tournament userTournaments, Team userTournamentTeam, int userTournamentMatchesWins, int userTournamentMatchesLosses) {
 		super();
 		this.userTournamentsId = userTournamentsId;
 		this.userTournament = userTournaments; 
 		this.userTournamentMatchesWins = userTournamentMatchesWins;
 		this.userTournamentMatchesLosses = userTournamentMatchesLosses;
+		this.userTournamentTeam = userTournamentTeam;
 	}
 
 	public Tournament getUserTournaments() {
@@ -53,6 +58,30 @@ public class UserTournament {
 
 	public void setUserTournamentMatchesLosses(int userTournamentMatchesLosses) {
 		this.userTournamentMatchesLosses = userTournamentMatchesLosses;
+	}
+
+	public String getUserTournamentsId() {
+		return userTournamentsId;
+	}
+
+	public void setUserTournamentsId(String userTournamentsId) {
+		this.userTournamentsId = userTournamentsId;
+	}
+
+	public Tournament getUserTournament() {
+		return userTournament;
+	}
+
+	public void setUserTournament(Tournament userTournament) {
+		this.userTournament = userTournament;
+	}
+
+	public Team getUserTournamentTeam() {
+		return userTournamentTeam;
+	}
+
+	public void setUserTournamentTeam(Team userTournamentTeam) {
+		this.userTournamentTeam = userTournamentTeam;
 	}
 	
 }

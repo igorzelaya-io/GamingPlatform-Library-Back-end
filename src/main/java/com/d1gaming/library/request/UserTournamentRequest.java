@@ -1,5 +1,6 @@
 package com.d1gaming.library.request;
 
+import com.d1gaming.library.team.Team;
 import com.d1gaming.library.tournament.Tournament;
 import com.d1gaming.library.user.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -12,14 +13,18 @@ public class UserTournamentRequest {
 	private Tournament tournament;
 	
 	@JsonProperty
+	private Team team;
+	
+	@JsonProperty
 	private User user;
 	
 	public UserTournamentRequest() {
-		
+		super();
 	}
 	
-	public UserTournamentRequest(Tournament tournament, User user) {
+	public UserTournamentRequest(Tournament tournament, Team team, User user) {
 		this.tournament = tournament;
+		this.team = team;
 		this.user = user;
 	}
 
@@ -29,6 +34,14 @@ public class UserTournamentRequest {
 
 	public void setTournament(Tournament tournament) {
 		this.tournament = tournament;
+	}
+
+	public Team getTeam() {
+		return team;
+	}
+
+	public void setTeam(Team team) {
+		this.team = team;
 	}
 
 	public User getUser() {

@@ -1,4 +1,4 @@
-package com.d1gaming.library.user;
+ package com.d1gaming.library.user;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -61,6 +61,12 @@ public class User {
 	@JsonProperty
 	private List<UserTournament> userTournaments;
 	
+	@JsonProperty
+	private int userTotalWs;
+	
+	@JsonProperty
+	private int userTotalLs;
+	
 	public User(){
 		super();
 	}
@@ -82,7 +88,8 @@ public class User {
 		this.userTokens = userTokens;
 	}
 	
-	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus,  String userCountry, Map<String, Object> userBirthDate) {
+	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus, 
+			    String userCountry, Map<String, Object> userBirthDate) {
 		super();
 		this.userRealName = userRealName;
 		this.userName = userName;
@@ -93,7 +100,9 @@ public class User {
 		this.userBirthDate = userBirthDate;
 	}
 	
-	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus, String userCountry, Map<String, Object> userBirthDate, double userCash, int userTokens) {
+	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus, 
+			    List<Team> userTeams, List<TeamInviteRequest> userTeamInvites, List<UserTournament> userTournaments,	
+			    String userCountry, Map<String, Object> userBirthDate, double userCash, int userTokens, int userTotalWs, int userTotalLs) {
 		this.userRealName = userRealName; 
 		this.userName = userName;
 		this.userPassword = userPassword;
@@ -103,6 +112,11 @@ public class User {
 		this.userBirthDate = userBirthDate;
 		this.userCash = userCash;
 		this.userTokens = userTokens;
+		this.userTeams = userTeams;
+		this.userTeamRequests = userTeamInvites;
+		this.userTournaments = userTournaments;
+		this.userTotalWs = userTotalWs;
+		this.userTotalLs = userTotalLs;
 	}
 
 	public String getUserId() {
@@ -231,5 +245,21 @@ public class User {
 
 	public void setUserTournaments(List<UserTournament> userTournaments) {
 		this.userTournaments = userTournaments;
+	}
+
+	public int getUserTotalWs() {
+		return userTotalWs;
+	}
+
+	public void setUserTotalWs(int userTotalWs) {
+		this.userTotalWs = userTotalWs;
+	}
+
+	public int getUserTotalLs() {
+		return userTotalLs;
+	}
+
+	public void setUserTotalLs(int userTotalLs) {
+		this.userTotalLs = userTotalLs;
 	}
 }
