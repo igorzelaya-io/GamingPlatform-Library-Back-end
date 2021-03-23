@@ -2,6 +2,7 @@
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/role/Role.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/team/Team.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/request/UserTournamentRequest.java
+/Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/request/UserTokenRequest.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/user/UserStatus.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/user/UserTournament.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/team/TeamInviteRequestStatus.java
