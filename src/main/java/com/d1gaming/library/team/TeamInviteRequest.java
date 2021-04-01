@@ -21,6 +21,10 @@ public class TeamInviteRequest {
 	@JsonProperty
 	private TeamInviteRequestStatus requestStatus;
 
+	public TeamInviteRequest() {
+		super();
+	}
+	
 	public TeamInviteRequest(Team teamRequest, User requestedUser, Date requestedTime,
 			TeamInviteRequestStatus requestStatus) {
 		super();
