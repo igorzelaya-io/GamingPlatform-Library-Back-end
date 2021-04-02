@@ -117,11 +117,11 @@ public class Team {
 		this.teamChallenges = teamChallenges;
 	}
 
-	public User getTeamLeader() {
+	public User getTeamModerator() {
 		return teamModerator;
 	}
 
-	public void setTeamLeader(User teamLeader) {
+	public void setTeamModerator(User teamLeader) {
 		this.teamModerator = teamLeader;
 	}
 
