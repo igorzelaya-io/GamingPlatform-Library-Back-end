@@ -12,8 +12,8 @@
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/user/User.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/user/UserView.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/tournament/TournamentFormat.java
+/Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/match/Match.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/challenge/ChallengeStatus.java
-/Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/team/TeamTournament.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/tournament/TournamentCreationRequest.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/image/ImageModel.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/response/MessageResponse.java
@@ -25,7 +25,9 @@
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/challenge/Challenge.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/tournament/Tournament.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/tournament/TournamentTeamSize.java
+/Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/team/TeamCodTournament.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/tournament/TournamentMode.java
+/Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/team/TeamFifaTournament.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/request/UserRolesModel.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/request/TeamTournamentRequest.java
 /Users/igorzelaya/SoftwareDev/D1Gaming-library-backend/src/main/java/com/d1gaming/library/request/UserRegisterRequest.java

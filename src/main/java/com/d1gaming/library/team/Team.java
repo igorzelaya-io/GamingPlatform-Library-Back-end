@@ -31,7 +31,10 @@ public class Team {
 	private List<Challenge> teamChallenges;
 	
 	@JsonProperty
-	private List<TeamTournament> teamTournaments;
+	private List<TeamFifaTournament> teamFifaTournaments;
+	
+	@JsonProperty
+	private List<TeamCodTournament> teamCodTournaments;
 	
 	@JsonProperty
 	private User teamModerator;
@@ -124,6 +127,14 @@ public class Team {
 	public void setTeamModerator(User teamLeader) {
 		this.teamModerator = teamLeader;
 	}
+	
+	public User getTeamLeader() {
+		return teamModerator;
+	}
+
+	public void setTeamLeader(User teamLeader) {
+		this.teamModerator = teamLeader;
+	}
 
 	public String getTeamEmail() {
 		return teamEmail;
@@ -131,14 +142,6 @@ public class Team {
 
 	public void setTeamEmail(String teamEmail) {
 		this.teamEmail = teamEmail;
-	}
-
-	public List<TeamTournament> getTeamTournaments() {
-		return teamTournaments;
-	}
-
-	public void setTeamTournaments(List<TeamTournament> teamTournaments) {
-		this.teamTournaments = teamTournaments;
 	}
 
 	public List<TeamInviteRequest> getTeamRequests() {
@@ -155,6 +158,22 @@ public class Team {
 
 	public void setTeamImage(ImageModel teamImage) {
 		this.teamImage = teamImage;
+	}
+
+	public List<TeamFifaTournament> getTeamFifaTournaments() {
+		return teamFifaTournaments;
+	}
+
+	public void setTeamFifaTournaments(List<TeamFifaTournament> teamFifaTournaments) {
+		this.teamFifaTournaments = teamFifaTournaments;
+	}
+
+	public List<TeamCodTournament> getTeamCodTournaments() {
+		return teamCodTournaments;
+	}
+
+	public void setTeamCodTournaments(List<TeamCodTournament> teamCodTournaments) {
+		this.teamCodTournaments = teamCodTournaments;
 	}
 
 }

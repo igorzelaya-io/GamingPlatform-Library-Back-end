@@ -21,6 +21,7 @@ public class Challenge {
 	
 	@JsonProperty
 	private ChallengeStatus challengeStatus;
+	//ASSIGN CHALLENGE STATUS ON CHALLENGE CREATION
 	
 	@JsonProperty
 	private Date challengeDate;

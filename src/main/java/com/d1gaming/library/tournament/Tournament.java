@@ -2,7 +2,9 @@ package com.d1gaming.library.tournament;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Stack;
 
+import com.d1gaming.library.match.Match;
 import com.d1gaming.library.team.Team;
 import com.d1gaming.library.user.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -66,7 +68,19 @@ public class Tournament {
 	private String tournamentCodGameMode;
 	
 	@JsonProperty
-	private String tournamentMatchesNumber;
+	private int tournamentMatchesNumber;
+	
+	@JsonProperty
+	private List<Match> tournamentMatches;
+	
+	@JsonProperty
+	private Stack<Team> tournamentTeamBracketStack;
+	
+	@JsonProperty
+	private List<Team> tournamentLeaderboardForLeague;
+	
+	@JsonProperty
+	private boolean isStartedTournament;
 	
 	
 	public Tournament() {
@@ -236,12 +250,68 @@ public class Tournament {
 		this.tournamentCodGameMode = tournamentCodGameMode;
 	}
 
-	public String getTournamentMatchesNumber() {
+	public int getTournamentMatchesNumber() {
 		return tournamentMatchesNumber;
 	}
 
-	public void setTournamentMatchesNumber(String tournamentMatchesNumber) {
+	public void setTournamentMatchesNumber(int tournamentMatchesNumber) {
 		this.tournamentMatchesNumber = tournamentMatchesNumber;
+	}
+
+	public int getTournamentLimitNumberOfTeams() {
+		return tournamentLimitNumberOfTeams;
+	}
+
+	public void setTournamentLimitNumberOfTeams(int tournamentLimitNumberOfTeams) {
+		this.tournamentLimitNumberOfTeams = tournamentLimitNumberOfTeams;
+	}
+
+	public int getTournamentEntryFee() {
+		return tournamentEntryFee;
+	}
+
+	public void setTournamentEntryFee(int tournamentEntryFee) {
+		this.tournamentEntryFee = tournamentEntryFee;
+	}
+
+	public TournamentTeamSize getTournamentTeamSize() {
+		return tournamentTeamSize;
+	}
+
+	public void setTournamentTeamSize(TournamentTeamSize tournamentTeamSize) {
+		this.tournamentTeamSize = tournamentTeamSize;
+	}
+
+	public List<Match> getTournamentMatches() {
+		return tournamentMatches;
+	}
+
+	public void setTournamentMatches(List<Match> tournamentMatches) {
+		this.tournamentMatches = tournamentMatches;
+	}
+
+	public Stack<Team> getTournamentTeamBracketStack() {
+		return tournamentTeamBracketStack;
+	}
+
+	public void setTournamentTeamBracketStack(Stack<Team> tournamentTeamBracketStack) {
+		this.tournamentTeamBracketStack = tournamentTeamBracketStack;
+	}
+
+	public List<Team> getTournamentLeaderboardForLeague() {
+		return tournamentLeaderboardForLeague;
+	}
+
+	public void setTournamentLeaderboardForLeague(List<Team> tournamentLeaderboardForLeague) {
+		this.tournamentLeaderboardForLeague = tournamentLeaderboardForLeague;
+	}
+
+	public boolean getStartedTournamentStatus() {
+		return isStartedTournament;
+	}
+
+	public void setStartedTournamentStatus(boolean isStartedTournament) {
+		this.isStartedTournament = isStartedTournament;
 	}
 	
 }

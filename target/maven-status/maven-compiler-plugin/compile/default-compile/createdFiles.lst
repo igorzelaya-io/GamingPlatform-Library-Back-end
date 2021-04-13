@@ -10,7 +10,6 @@ com/d1gaming/library/role/ERole.class
 com/d1gaming/library/transaction/TransactionStatus.class
 com/d1gaming/library/response/JwtResponse.class
 com/d1gaming/library/tournament/Tournament.class
-com/d1gaming/library/team/TeamTournament.class
 com/d1gaming/library/team/TeamCreationRequest.class
 com/d1gaming/library/team/TeamInviteRequestStatus.class
 com/d1gaming/library/request/TeamTournamentRequest.class
