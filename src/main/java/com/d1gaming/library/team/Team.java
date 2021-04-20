@@ -175,5 +175,7 @@ public class Team {
 	public void setTeamCodTournaments(List<TeamCodTournament> teamCodTournaments) {
 		this.teamCodTournaments = teamCodTournaments;
 	}
+	
+	
 
 }

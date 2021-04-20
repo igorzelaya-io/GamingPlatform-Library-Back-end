@@ -42,8 +42,10 @@ public class TeamFifaTournament {
 	
 	@JsonProperty
 	private int teamTournamentGoalsDifference;
-		
 	
+	@JsonProperty
+	private TeamTournamentStatus teamTournamentStatus;
+		
 	public TeamFifaTournament() {
 		super();
 	}
@@ -51,7 +53,7 @@ public class TeamFifaTournament {
 	public TeamFifaTournament(Tournament teamTournament, List<Match> teamTournamentMatches, int teamTournamentPoints, 
 			int teamTournamentNumberOfMatchesPlayed, int teamTournamentMatchesDraws,
 			int teamTournamentMatchesWins, int teamTournamentMatchesLosses, int teamTournamentGoalsScored,
-			int teamTournamentGoalsReceived, int teamTournamentGoalsDifference) {
+			int teamTournamentGoalsReceived, int teamTournamentGoalsDifference, TeamTournamentStatus teamTournamentStatus) {
 		super();
 		this.teamFifaTournament = teamTournament;
 		this.teamTournamentMatches = teamTournamentMatches;
@@ -63,7 +65,7 @@ public class TeamFifaTournament {
 		this.teamTournamentGoalsScored = teamTournamentGoalsScored;
 		this.teamTournamentGoalsReceived = teamTournamentGoalsReceived;
 		this.teamTournamentGoalsDifference = teamTournamentGoalsDifference;
-		
+		this.teamTournamentStatus = teamTournamentStatus;
 	}
 
 	public String getTeamTournamentId() {
@@ -153,6 +155,13 @@ public class TeamFifaTournament {
 	public void setTeamTournamentPoints(int teamTournamentPoints) {
 		this.teamTournamentPoints = teamTournamentPoints;
 	}
-	
-	
+
+	public TeamTournamentStatus getTeamTournamentStatus() {
+		return teamTournamentStatus;
+	}
+
+	public void setTeamTournamentStatus(TeamTournamentStatus teamTournamentStatus) {
+		this.teamTournamentStatus = teamTournamentStatus;
+	}
+
 }

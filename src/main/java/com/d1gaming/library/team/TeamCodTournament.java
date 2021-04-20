@@ -37,13 +37,16 @@ public class TeamCodTournament {
 	@JsonProperty
 	private int teamTournamentTotalKills;
 	
+	@JsonProperty
+	private TeamTournamentStatus teamTournamentStatus;
+	
 	public TeamCodTournament() {
 		super();
 	}
 
 	public TeamCodTournament(Tournament teamCodTournament, List<Match> teamCodTOurnamentMatches, int teamTournamentNumberOfMatchesPlayed,
 			int teamTournamentNumberOfMatchesDraws, int teamTournamentNumberOfMatchesWins, int teamTournamentPoints, 
-			int teamTournamentNumberOfMatchesLosses, int teamTournamentTotalKills) {
+			int teamTournamentNumberOfMatchesLosses, int teamTournamentTotalKills, TeamTournamentStatus teamTournamentStatus) {
 		super();
 		this.teamCodTournament = teamCodTournament;
 		this.teamCodTournamentMatches = teamCodTOurnamentMatches;
@@ -53,6 +56,7 @@ public class TeamCodTournament {
 		this.teamTournamentNumberOfMatchesWins = teamTournamentNumberOfMatchesWins;
 		this.teamTournamentNumberOfMatchesLosses = teamTournamentNumberOfMatchesLosses;
 		this.teamTournamentTotalKills = teamTournamentTotalKills;
+		this.teamTournamentStatus = teamTournamentStatus;
 	}
 
 	public String getTeamCodTournamentId() {
@@ -127,4 +131,12 @@ public class TeamCodTournament {
 		this.teamCodTournamentMatches = teamCodTournamentMatches;
 	}
 
+	public TeamTournamentStatus getTeamTournamentStatus() {
+		return teamTournamentStatus;
+	}
+
+	public void setTeamTournamentStatus(TeamTournamentStatus teamTournamentStatus) {
+		this.teamTournamentStatus = teamTournamentStatus;
+	}
+	
 }

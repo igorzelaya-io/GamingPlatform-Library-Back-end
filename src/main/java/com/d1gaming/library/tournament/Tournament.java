@@ -68,7 +68,7 @@ public class Tournament {
 	private String tournamentCodGameMode;
 	
 	@JsonProperty
-	private int tournamentMatchesNumber;
+	private String tournamentMatchesNumber;
 	
 	@JsonProperty
 	private List<Match> tournamentMatches;
@@ -250,11 +250,11 @@ public class Tournament {
 		this.tournamentCodGameMode = tournamentCodGameMode;
 	}
 
-	public int getTournamentMatchesNumber() {
+	public String getTournamentMatchesNumber() {
 		return tournamentMatchesNumber;
 	}
 
-	public void setTournamentMatchesNumber(int tournamentMatchesNumber) {
+	public void setTournamentMatchesNumber(String tournamentMatchesNumber) {
 		this.tournamentMatchesNumber = tournamentMatchesNumber;
 	}
 

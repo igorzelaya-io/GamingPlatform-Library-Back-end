@@ -59,13 +59,13 @@ public class User {
 	private List<Role> userRoles = new ArrayList<>();
 	
 	@JsonProperty
-	private List<UserTournament> userTournaments;
-	
-	@JsonProperty
 	private int userTotalWs;
 	
 	@JsonProperty
 	private int userTotalLs;
+	
+	@JsonProperty
+	private List<UserTournament> userTournaments;
 	
 	public User(){
 		super();
@@ -101,7 +101,7 @@ public class User {
 	}
 	
 	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus, 
-			    List<Team> userTeams, List<TeamInviteRequest> userTeamInvites, List<UserTournament> userTournaments,	
+			    List<Team> userTeams, List<TeamInviteRequest> userTeamInvites,	
 			    String userCountry, Map<String, Object> userBirthDate, double userCash, int userTokens, int userTotalWs, int userTotalLs) {
 		this.userRealName = userRealName; 
 		this.userName = userName;
@@ -114,7 +114,6 @@ public class User {
 		this.userTokens = userTokens;
 		this.userTeams = userTeams;
 		this.userTeamRequests = userTeamInvites;
-		this.userTournaments = userTournaments;
 		this.userTotalWs = userTotalWs;
 		this.userTotalLs = userTotalLs;
 	}
@@ -239,14 +238,6 @@ public class User {
 		this.userStatusCode = userStatusCode;
 	}
 
-	public List<UserTournament> getUserTournaments() {
-		return userTournaments;
-	}
-
-	public void setUserTournaments(List<UserTournament> userTournaments) {
-		this.userTournaments = userTournaments;
-	}
-
 	public int getUserTotalWs() {
 		return userTotalWs;
 	}
@@ -261,5 +252,13 @@ public class User {
 
 	public void setUserTotalLs(int userTotalLs) {
 		this.userTotalLs = userTotalLs;
+	}
+
+	public List<UserTournament> getUserTournaments() {
+		return userTournaments;
+	}
+
+	public void setUserTournaments(List<UserTournament> userTournaments) {
+		this.userTournaments = userTournaments;
 	}
 }

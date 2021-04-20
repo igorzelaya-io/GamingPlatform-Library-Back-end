@@ -1,7 +1,5 @@
 package com.d1gaming.library.match;
 
-import java.util.Date;
-
 import com.d1gaming.library.team.Team;
 import com.d1gaming.library.tournament.Tournament;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,19 +27,21 @@ public class Match {
 	private int awayTeamMatchScore;
 
 	@JsonProperty
-	private boolean isUploadedMatchResult;
+	private MatchStatus matchStatus;
 	
 	@JsonProperty
-	private Date matchDate;
+	private Team matchWinningTeam;
+	
 	
 	public Match(Tournament matchTournament, Team matchLocalTeam, Team matchAwayTeam,
-			int localTeamMatchScore, int awayTeamMatchScore, boolean isUploadedMatchResult) {
+			int localTeamMatchScore, int awayTeamMatchScore, MatchStatus matchStatus) {
 		super();
 		this.matchTournament = matchTournament;
 		this.matchLocalTeam = matchLocalTeam;
 		this.matchAwayTeam = matchAwayTeam;
 		this.localTeamMatchScore = localTeamMatchScore;
 		this.awayTeamMatchScore = awayTeamMatchScore;
+		this.matchStatus = matchStatus;
 	}
 
 	public Match() {
@@ -96,20 +96,19 @@ public class Match {
 		this.awayTeamMatchScore = awayTeamMatchScore;
 	}
 
-	public boolean isUploadedMatchResult() {
-		return isUploadedMatchResult;
+	public MatchStatus getMatchStatus() {
+		return matchStatus;
 	}
 
-	public void setUploadedMatchResult(boolean isUploadedMatchResult) {
-		this.isUploadedMatchResult = isUploadedMatchResult;
+	public void setMatchStatus(MatchStatus matchStatus) {
+		this.matchStatus = matchStatus;
 	}
 
-	public Date getMatchDate() {
-		return matchDate;
+	public Team getMatchWinningTeam() {
+		return matchWinningTeam;
 	}
 
-	public void setMatchDate(Date matchDate) {
-		this.matchDate = matchDate;
+	public void setMatchWinningTeam(Team matchWinningTeam) {
+		this.matchWinningTeam = matchWinningTeam;
 	}
-
 }
