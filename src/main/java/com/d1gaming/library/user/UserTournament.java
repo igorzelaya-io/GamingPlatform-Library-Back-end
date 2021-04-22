@@ -11,9 +11,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
 public class UserTournament {
-
-	@JsonProperty
-	private String userTournamentId;
 	
 	@JsonProperty
 	private Tournament userTournament;
@@ -37,22 +34,16 @@ public class UserTournament {
 		super();
 	}
 	
-	public UserTournament(Tournament userTournaments, Team userTournamentTeam, int userTournamentMatchesWins, int userTournamentMatchesLosses, List<Match> userTournamentMatches
-						, TeamTournamentStatus userTournamentStatus) {
+	public UserTournament(Tournament userTournaments, Team userTournamentTeam, int userTournamentMatchesWins, int userTournamentMatchesLosses, 
+						List<Match> userTournamentMatches, TeamTournamentStatus userTournamentStatus) {
 		super();
 		this.userTournament = userTournaments; 
 		this.userTournamentMatchesWins = userTournamentMatchesWins;
 		this.userTournamentMatchesLosses = userTournamentMatchesLosses;
 		this.userTournamentTeam = userTournamentTeam;
+		this.userTournamentMatches = userTournamentMatches;
 		this.userTournamentStatus = userTournamentStatus;
-	}
-
-	public String getUserTournamentId() {
-		return userTournamentId;
-	}
-
-	public void setUserTournamentId(String userTournamentId) {
-		this.userTournamentId = userTournamentId;
+		
 	}
 
 	public Tournament getUserTournament() {

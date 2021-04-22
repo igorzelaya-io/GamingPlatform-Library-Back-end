@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
-import com.d1gaming.library.match.Match;
 import com.d1gaming.library.team.Team;
 import com.d1gaming.library.user.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -69,9 +68,6 @@ public class Tournament {
 	
 	@JsonProperty
 	private String tournamentMatchesNumber;
-	
-	@JsonProperty
-	private List<Match> tournamentMatches;
 	
 	@JsonProperty
 	private Stack<Team> tournamentTeamBracketStack;
@@ -280,14 +276,6 @@ public class Tournament {
 
 	public void setTournamentTeamSize(TournamentTeamSize tournamentTeamSize) {
 		this.tournamentTeamSize = tournamentTeamSize;
-	}
-
-	public List<Match> getTournamentMatches() {
-		return tournamentMatches;
-	}
-
-	public void setTournamentMatches(List<Match> tournamentMatches) {
-		this.tournamentMatches = tournamentMatches;
 	}
 
 	public Stack<Team> getTournamentTeamBracketStack() {

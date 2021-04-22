@@ -5,11 +5,11 @@ import java.util.List;
 import com.d1gaming.library.challenge.Challenge;
 import com.d1gaming.library.image.ImageModel;
 import com.d1gaming.library.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-
 public class Team {
 	
 	@JsonProperty
@@ -31,12 +31,6 @@ public class Team {
 	private List<Challenge> teamChallenges;
 	
 	@JsonProperty
-	private List<TeamFifaTournament> teamFifaTournaments;
-	
-	@JsonProperty
-	private List<TeamCodTournament> teamCodTournaments;
-	
-	@JsonProperty
 	private User teamModerator;
 
 	@JsonProperty
@@ -53,13 +47,13 @@ public class Team {
 	}
 
 	public Team(String teamCountry, String teamName, List<User> teamUsers, TeamStatus teamStatus, 
-				List<Challenge> teamChallenges, User teamLeader, String teamEmail) {
+				List<Challenge> teamChallenges, User teamModerator, String teamEmail) {
 		super();
 		this.teamCountry = teamCountry;
 		this.teamName = teamName;
 		this.teamUsers = teamUsers;
 		this.teamChallenges = teamChallenges;
-		this.teamModerator = teamLeader;
+		this.teamModerator = teamModerator;
 		this.teamEmail = teamEmail;
 		this.teamStatus = teamStatus;
 	}
@@ -124,18 +118,10 @@ public class Team {
 		return teamModerator;
 	}
 
-	public void setTeamModerator(User teamLeader) {
-		this.teamModerator = teamLeader;
+	public void setTeamModerator(User teamModerator ) {
+		this.teamModerator = teamModerator;
 	}
 	
-	public User getTeamLeader() {
-		return teamModerator;
-	}
-
-	public void setTeamLeader(User teamLeader) {
-		this.teamModerator = teamLeader;
-	}
-
 	public String getTeamEmail() {
 		return teamEmail;
 	}
@@ -159,23 +145,5 @@ public class Team {
 	public void setTeamImage(ImageModel teamImage) {
 		this.teamImage = teamImage;
 	}
-
-	public List<TeamFifaTournament> getTeamFifaTournaments() {
-		return teamFifaTournaments;
-	}
-
-	public void setTeamFifaTournaments(List<TeamFifaTournament> teamFifaTournaments) {
-		this.teamFifaTournaments = teamFifaTournaments;
-	}
-
-	public List<TeamCodTournament> getTeamCodTournaments() {
-		return teamCodTournaments;
-	}
-
-	public void setTeamCodTournaments(List<TeamCodTournament> teamCodTournaments) {
-		this.teamCodTournaments = teamCodTournaments;
-	}
-	
-	
 
 }

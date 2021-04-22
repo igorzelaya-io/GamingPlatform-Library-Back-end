@@ -59,13 +59,13 @@ public class User {
 	private List<Role> userRoles = new ArrayList<>();
 	
 	@JsonProperty
+	private List<UserTournament> userTournaments;
+	
+	@JsonProperty
 	private int userTotalWs;
 	
 	@JsonProperty
 	private int userTotalLs;
-	
-	@JsonProperty
-	private List<UserTournament> userTournaments;
 	
 	public User(){
 		super();
@@ -102,7 +102,8 @@ public class User {
 	
 	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus, 
 			    List<Team> userTeams, List<TeamInviteRequest> userTeamInvites,	
-			    String userCountry, Map<String, Object> userBirthDate, double userCash, int userTokens, int userTotalWs, int userTotalLs) {
+			    String userCountry, Map<String, Object> userBirthDate, double userCash, int userTokens, int userTotalWs, int userTotalLs,
+			    List<UserTournament> userTournaments) {
 		this.userRealName = userRealName; 
 		this.userName = userName;
 		this.userPassword = userPassword;
@@ -116,6 +117,7 @@ public class User {
 		this.userTeamRequests = userTeamInvites;
 		this.userTotalWs = userTotalWs;
 		this.userTotalLs = userTotalLs;
+		this.userTournaments = userTournaments;
 	}
 
 	public String getUserId() {
