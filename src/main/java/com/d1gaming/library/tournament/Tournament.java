@@ -174,14 +174,6 @@ public class Tournament {
 		this.tournamentCashPrice = tournamentCashPrice;
 	}
 
-	public int getTournamentTokenEntryFee() {
-		return tournamentEntryFee;
-	}
-
-	public void setTournamentTokenEntryFee(int tournamentTokenEntryFee) {
-		this.tournamentEntryFee = tournamentTokenEntryFee;
-	}
-
 	public String getTournamentRegion() {
 		return tournamentRegion;
 	}
