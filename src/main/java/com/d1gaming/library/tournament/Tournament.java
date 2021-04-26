@@ -118,6 +118,22 @@ public class Tournament {
 		this.tournamentTeams = tournamentTeams;
 	}
 
+	public int getTournamentLimitNumberOfTeams() {
+		return tournamentLimitNumberOfTeams;
+	}
+
+	public void setTournamentLimitNumberOfTeams(int tournamentLimitNumberOfTeams) {
+		this.tournamentLimitNumberOfTeams = tournamentLimitNumberOfTeams;
+	}
+
+	public int getTournamentNumberOfTeams() {
+		return tournamentNumberOfTeams;
+	}
+
+	public void setTournamentNumberOfTeams(int tournamentNumberOfTeams) {
+		this.tournamentNumberOfTeams = tournamentNumberOfTeams;
+	}
+
 	public TournamentStatus getTournamentStatus() {
 		return tournamentStatus;
 	}
@@ -146,16 +162,8 @@ public class Tournament {
 		return tournamentGameMode;
 	}
 
-	public void setTournamentGameMode(TournamentMode tournamentType) {
-		this.tournamentGameMode = tournamentType;
-	}
-
-	public int getTournamentNumberOfTeams() {
-		return tournamentNumberOfTeams;
-	}
-
-	public void setTournamentNumberOfTeams(int tournamentNumberOfTeams) {
-		this.tournamentNumberOfTeams = tournamentNumberOfTeams;
+	public void setTournamentGameMode(TournamentMode tournamentGameMode) {
+		this.tournamentGameMode = tournamentGameMode;
 	}
 
 	public String getTournamentPlatforms() {
@@ -174,28 +182,20 @@ public class Tournament {
 		this.tournamentCashPrice = tournamentCashPrice;
 	}
 
+	public int getTournamentEntryFee() {
+		return tournamentEntryFee;
+	}
+
+	public void setTournamentEntryFee(int tournamentEntryFee) {
+		this.tournamentEntryFee = tournamentEntryFee;
+	}
+
 	public String getTournamentRegion() {
 		return tournamentRegion;
 	}
 
 	public void setTournamentRegion(String tournamentRegion) {
 		this.tournamentRegion = tournamentRegion;
-	}
-
-	public int getLimitNumberOfTeams() {
-		return tournamentLimitNumberOfTeams;
-	}
-
-	public void setLimitNumberOfTeams(int limitNumberOfTeams) {
-		this.tournamentLimitNumberOfTeams = limitNumberOfTeams;
-	}
-
-	public TournamentMode getTournamentType() {
-		return tournamentGameMode;
-	}
-
-	public void setTournamentType(TournamentMode tournamentType) {
-		this.tournamentGameMode = tournamentType;
 	}
 
 	public TournamentFormat getTournamentFormat() {
@@ -206,12 +206,12 @@ public class Tournament {
 		this.tournamentFormat = tournamentFormat;
 	}
 
-	public TournamentTeamSize getTournametTeamSize() {
+	public TournamentTeamSize getTournamentTeamSize() {
 		return tournamentTeamSize;
 	}
 
-	public void setTournametTeamSize(TournamentTeamSize tournametTeamSize) {
-		this.tournamentTeamSize = tournametTeamSize;
+	public void setTournamentTeamSize(TournamentTeamSize tournamentTeamSize) {
+		this.tournamentTeamSize = tournamentTeamSize;
 	}
 
 	public String getTournamentDescription() {
@@ -246,30 +246,6 @@ public class Tournament {
 		this.tournamentMatchesNumber = tournamentMatchesNumber;
 	}
 
-	public int getTournamentLimitNumberOfTeams() {
-		return tournamentLimitNumberOfTeams;
-	}
-
-	public void setTournamentLimitNumberOfTeams(int tournamentLimitNumberOfTeams) {
-		this.tournamentLimitNumberOfTeams = tournamentLimitNumberOfTeams;
-	}
-
-	public int getTournamentEntryFee() {
-		return tournamentEntryFee;
-	}
-
-	public void setTournamentEntryFee(int tournamentEntryFee) {
-		this.tournamentEntryFee = tournamentEntryFee;
-	}
-
-	public TournamentTeamSize getTournamentTeamSize() {
-		return tournamentTeamSize;
-	}
-
-	public void setTournamentTeamSize(TournamentTeamSize tournamentTeamSize) {
-		this.tournamentTeamSize = tournamentTeamSize;
-	}
-
 	public Stack<Team> getTournamentTeamBracketStack() {
 		return tournamentTeamBracketStack;
 	}
@@ -286,12 +262,13 @@ public class Tournament {
 		this.tournamentLeaderboardForLeague = tournamentLeaderboardForLeague;
 	}
 
-	public boolean getStartedTournamentStatus() {
+	public boolean isStartedTournament() {
 		return isStartedTournament;
 	}
 
-	public void setStartedTournamentStatus(boolean isStartedTournament) {
+	public void setStartedTournament(boolean isStartedTournament) {
 		this.isStartedTournament = isStartedTournament;
 	}
+	
 	
 }
