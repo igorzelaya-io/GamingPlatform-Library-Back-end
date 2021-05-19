@@ -32,6 +32,11 @@ public class Match {
 	@JsonProperty
 	private Team matchWinningTeam;
 	
+	@JsonProperty
+	private boolean uploaded = false;
+	
+	@JsonProperty
+	private int matchRoundInTournament;
 	
 	public Match(Tournament matchTournament, Team matchLocalTeam, Team matchAwayTeam,
 			int localTeamMatchScore, int awayTeamMatchScore, MatchStatus matchStatus) {
@@ -111,4 +116,23 @@ public class Match {
 	public void setMatchWinningTeam(Team matchWinningTeam) {
 		this.matchWinningTeam = matchWinningTeam;
 	}
+
+	public boolean isUploaded() {
+		return uploaded;
+	}
+
+	public void setUploaded(boolean uploaded) {
+		this.uploaded = uploaded;
+	}
+
+	public int getMatchRoundInTournament() {
+		return matchRoundInTournament;
+	}
+
+	public void setMatchRoundInTournament(int matchRoundInTournament) {
+		this.matchRoundInTournament = matchRoundInTournament;
+	}
+	
 }
+
+

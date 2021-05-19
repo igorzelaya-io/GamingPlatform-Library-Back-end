@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
+import com.d1gaming.library.node.BinaryTree;
 import com.d1gaming.library.team.Team;
 import com.d1gaming.library.user.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -78,6 +79,8 @@ public class Tournament {
 	@JsonProperty
 	private boolean isStartedTournament;
 	
+	@JsonProperty
+	private BinaryTree tournamentBracketTree;
 	
 	public Tournament() {
 		super();
@@ -269,6 +272,13 @@ public class Tournament {
 	public void setStartedTournament(boolean isStartedTournament) {
 		this.isStartedTournament = isStartedTournament;
 	}
-	
+
+	public BinaryTree getTournamentBracketTree() {
+		return tournamentBracketTree;
+	}
+
+	public void setTournamentBracketTree(BinaryTree tournamentBracketTree) {
+		this.tournamentBracketTree = tournamentBracketTree;
+	}
 	
 }
