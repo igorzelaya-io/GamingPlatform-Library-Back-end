@@ -1,15 +1,26 @@
 package com.d1gaming.library.node;
 
+import java.io.Serializable;
+
 import com.d1gaming.library.match.Match;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-public class TreeNode {
+@JsonSerialize
+public class TreeNode implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
+	@JsonProperty
 	private Match value;
 	
+	@JsonProperty
 	private TreeNode left;
 	
+	@JsonProperty
 	private TreeNode right;
 	
+	@JsonProperty
 	private TreeNode rootNode;
 	
 	public TreeNode() {

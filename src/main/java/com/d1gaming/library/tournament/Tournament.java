@@ -1,17 +1,21 @@
-package com.d1gaming.library.tournament;
+ package com.d1gaming.library.tournament;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.Stack;
 
 import com.d1gaming.library.node.BinaryTree;
 import com.d1gaming.library.team.Team;
-import com.d1gaming.library.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.google.cloud.firestore.annotation.Exclude;
 
 @JsonSerialize
-public class Tournament {
+public class Tournament implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@JsonProperty
 	private String tournamentId;
@@ -32,19 +36,19 @@ public class Tournament {
 	private TournamentStatus tournamentStatus;
 	
 	@JsonProperty
-	private User tournamentModerator;
+	private String tournamentModeratorId;
 
 	@JsonProperty
 	private Date tournamentDate;
 
 	@JsonProperty
-	private TournamentMode tournamentGameMode;
+	private String tournamentGameMode;
 		
 	@JsonProperty
 	private String tournamentPlatforms;
 	
 	@JsonProperty
-	private double tournamentCashPrice;
+	private double tournamentCashPrize;
 	
 	@JsonProperty
 	private int tournamentEntryFee;
@@ -79,20 +83,26 @@ public class Tournament {
 	@JsonProperty
 	private boolean isStartedTournament;
 	
+	@JsonIgnore
+	private String tournamentBase64BracketTree;
+	
 	@JsonProperty
-	private BinaryTree tournamentBracketTree;
+	private BinaryTree tournamentBinaryTree;
+	
+	@JsonProperty
+	private Team tournamentWinningTeam;
 	
 	public Tournament() {
 		super();
 	}
 
 	public Tournament(String tournamentName, List<Team> tournamentTeams, TournamentStatus tournamentStatus,
-			User tournamentModerator, Date tournamentDate, TournamentMode tournamentGameMode) {
+			String tournamentModeratorId, Date tournamentDate, String tournamentGameMode) {
 		super();
 		this.tournamentName = tournamentName;
 		this.tournamentTeams = tournamentTeams;
 		this.tournamentStatus = tournamentStatus;
-		this.tournamentModerator = tournamentModerator;
+		this.tournamentModeratorId = tournamentModeratorId;
 		this.tournamentDate = tournamentDate;
 		this.tournamentGameMode = tournamentGameMode;
 	}
@@ -145,12 +155,12 @@ public class Tournament {
 		this.tournamentStatus = tournamentStatus;
 	}
 
-	public User getTournamentModerator() {
-		return tournamentModerator;
+	public String getTournamentModeratorId() {
+		return tournamentModeratorId;
 	}
 
-	public void setTournamentModerator(User tournamentModerator) {
-		this.tournamentModerator = tournamentModerator;
+	public void setTournamentModeratorId(String tournamentModeratorId) {
+		this.tournamentModeratorId = tournamentModeratorId;
 	}
 
 	public Date getTournamentDate() {
@@ -161,11 +171,11 @@ public class Tournament {
 		this.tournamentDate = tournamentDate;
 	}
 
-	public TournamentMode getTournamentGameMode() {
+	public String getTournamentGameMode() {
 		return tournamentGameMode;
 	}
 
-	public void setTournamentGameMode(TournamentMode tournamentGameMode) {
+	public void setTournamentGameMode(String tournamentGameMode) {
 		this.tournamentGameMode = tournamentGameMode;
 	}
 
@@ -177,12 +187,12 @@ public class Tournament {
 		this.tournamentPlatforms = tournamentPlatforms;
 	}
 
-	public double getTournamentCashPrice() {
-		return tournamentCashPrice;
+	public double getTournamentCashPrize() {
+		return tournamentCashPrize;
 	}
 
-	public void setTournamentCashPrice(double tournamentCashPrice) {
-		this.tournamentCashPrice = tournamentCashPrice;
+	public void setTournamentCashPrize(double tournamentCashPrize) {
+		this.tournamentCashPrize = tournamentCashPrize;
 	}
 
 	public int getTournamentEntryFee() {
@@ -273,12 +283,29 @@ public class Tournament {
 		this.isStartedTournament = isStartedTournament;
 	}
 
-	public BinaryTree getTournamentBracketTree() {
-		return tournamentBracketTree;
-	}
-
-	public void setTournamentBracketTree(BinaryTree tournamentBracketTree) {
-		this.tournamentBracketTree = tournamentBracketTree;
+	public String getTournamentBase64BracketTree() {
+		return tournamentBase64BracketTree;
 	}
 	
+	public void setTournamentBase64BracketTree(String tournamentBase64BracketTree) {
+		this.tournamentBase64BracketTree = tournamentBase64BracketTree;
+	}
+
+	@Exclude
+	public BinaryTree getTournamentBinaryTree() {
+		return tournamentBinaryTree;
+	}
+
+	public void setTournamentBinaryTree(BinaryTree tournamentBinaryTree) {
+		this.tournamentBinaryTree = tournamentBinaryTree;
+	}
+	
+	public Team getTournamentWinningTeam() {
+		return this.tournamentWinningTeam;
+	}
+	
+	public void setTournamentWinningTeam(Team winningTeam) {
+		this.tournamentWinningTeam = winningTeam;
+	}
+
 }

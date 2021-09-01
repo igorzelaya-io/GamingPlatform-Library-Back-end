@@ -1,12 +1,15 @@
 package com.d1gaming.library.node;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class BinaryTree {
+public class BinaryTree implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@JsonProperty
 	private List<TreeRound> binaryTreeRounds;

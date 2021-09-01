@@ -1,6 +1,5 @@
 package com.d1gaming.library.tournament;
 
-import com.d1gaming.library.user.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -14,12 +13,12 @@ public class TournamentCreationRequest {
 	private long tournamentDateInMilliseconds;
 	
 	@JsonProperty
-	private User tournamentUserModerator;
+	private String tournamentUserModeratorId;
 
-	public TournamentCreationRequest(Tournament tournamentToBeCreated, User tournamentUserModerator) {
+	public TournamentCreationRequest(Tournament tournamentToBeCreated, String tournamentUserModeratorId) {
 		super();
 		this.tournamentToBeCreated = tournamentToBeCreated;
-		this.tournamentUserModerator = tournamentUserModerator;
+		this.tournamentUserModeratorId = tournamentUserModeratorId;
 	}
 	
 	public TournamentCreationRequest() {
@@ -42,12 +41,12 @@ public class TournamentCreationRequest {
 		this.tournamentDateInMilliseconds = tournamentDateInMilliseconds;
 	}
 
-	public User getTournamentUserModerator() {
-		return tournamentUserModerator;
+	public String getTournamentUserModeratorId() {
+		return tournamentUserModeratorId;
 	}
 
-	public void setTournamentUserModerator(User tournamentUserModerator) {
-		this.tournamentUserModerator = tournamentUserModerator;
+	public void setTournamentUserModeratorId(String tournamentUserModeratorId) {
+		this.tournamentUserModeratorId = tournamentUserModeratorId;
 	}
 
 }

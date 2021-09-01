@@ -1,5 +1,7 @@
 package com.d1gaming.library.role;
 
+import java.io.Serializable;
+
 import org.springframework.security.core.GrantedAuthority;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,7 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 
 @JsonSerialize
-public class Role implements GrantedAuthority {
+public class Role implements GrantedAuthority, Serializable {
 
 	private static final long serialVersionUID = 1L;
 

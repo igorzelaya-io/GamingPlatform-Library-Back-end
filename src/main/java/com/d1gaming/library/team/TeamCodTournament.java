@@ -3,7 +3,6 @@ package com.d1gaming.library.team;
 import java.util.List;
 
 import com.d1gaming.library.match.Match;
-import com.d1gaming.library.tournament.Tournament;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -14,7 +13,7 @@ public class TeamCodTournament {
 	private String teamCodTournamentId;
 	
 	@JsonProperty
-	private Tournament teamCodTournament;
+	private String teamTournamentId;
 	
 	@JsonProperty
 	private int teamTournamentPoints;
@@ -44,20 +43,25 @@ public class TeamCodTournament {
 		super();
 	}
 
-	public TeamCodTournament(Tournament teamCodTournament, List<Match> teamCodTOurnamentMatches, int teamTournamentNumberOfMatchesPlayed,
-			int teamTournamentNumberOfMatchesDraws, int teamTournamentNumberOfMatchesWins, int teamTournamentPoints, 
-			int teamTournamentNumberOfMatchesLosses, int teamTournamentTotalKills, TeamTournamentStatus teamTournamentStatus) {
+
+	public TeamCodTournament(String teamTournamentId, int teamTournamentPoints,
+			List<Match> teamCodTournamentMatches, int teamTournamentNumberOfMatchesPlayed,
+			int teamTournamentNumberOfMatchesDraws, int teamTournamentNumberOfMatchesWins,
+			int teamTournamentNumberOfMatchesLosses, int teamTournamentTotalKills,
+			TeamTournamentStatus teamTournamentStatus) {
 		super();
-		this.teamCodTournament = teamCodTournament;
-		this.teamCodTournamentMatches = teamCodTOurnamentMatches;
+		this.teamTournamentId = teamTournamentId;
+		this.teamTournamentPoints = teamTournamentPoints;
+		this.teamCodTournamentMatches = teamCodTournamentMatches;
 		this.teamTournamentNumberOfMatchesPlayed = teamTournamentNumberOfMatchesPlayed;
-		this.teamTournamentPoints = teamTournamentPoints; 
 		this.teamTournamentNumberOfMatchesDraws = teamTournamentNumberOfMatchesDraws;
 		this.teamTournamentNumberOfMatchesWins = teamTournamentNumberOfMatchesWins;
 		this.teamTournamentNumberOfMatchesLosses = teamTournamentNumberOfMatchesLosses;
 		this.teamTournamentTotalKills = teamTournamentTotalKills;
 		this.teamTournamentStatus = teamTournamentStatus;
 	}
+
+
 
 	public String getTeamCodTournamentId() {
 		return teamCodTournamentId;
@@ -67,12 +71,12 @@ public class TeamCodTournament {
 		this.teamCodTournamentId = teamCodTournamentId;
 	}
 
-	public Tournament getTeamCodTournament() {
-		return teamCodTournament;
+	public String getTeamTournamentId() {
+		return teamTournamentId;
 	}
 
-	public void setTeamCodTournament(Tournament teamCodTournament) {
-		this.teamCodTournament = teamCodTournament;
+	public void setTeamTournamentId(String teamTournamentId) {
+		this.teamTournamentId = teamTournamentId;
 	}
 
 	public int getTeamTournamentNumberOfMatchesPlayed() {

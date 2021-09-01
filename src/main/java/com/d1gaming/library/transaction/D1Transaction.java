@@ -1,6 +1,6 @@
 package com.d1gaming.library.transaction;
 
-import java.time.Instant;
+import java.util.Date;
 
 import com.d1gaming.library.service.D1Service;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,7 +16,7 @@ public class D1Transaction {
 	private D1Service transactionServiceCharged;
 	
 	@JsonProperty
-	private Instant transactionTime;
+	private Date transactionTime;
 	
 	@JsonProperty
 	private TransactionStatus transactionStatus;
@@ -25,7 +25,7 @@ public class D1Transaction {
 		
 	}
 
-	public D1Transaction(D1Service transactionServiceCharged, Instant transactionTime,
+	public D1Transaction(D1Service transactionServiceCharged, Date transactionTime,
 			TransactionStatus transactionStatus) {
 		super();
 		this.transactionServiceCharged = transactionServiceCharged;
@@ -49,11 +49,11 @@ public class D1Transaction {
 		this.transactionServiceCharged = transactionServiceCharged;
 	}
 
-	public Instant getTransactionTime() {
+	public Date getTransactionTime() {
 		return transactionTime;
 	}
 
-	public void setTransactionTime(Instant transactionTime) {
+	public void setTransactionTime(Date transactionTime) {
 		this.transactionTime = transactionTime;
 	}
 

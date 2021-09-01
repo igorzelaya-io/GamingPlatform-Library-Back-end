@@ -1,15 +1,15 @@
 package com.d1gaming.library.request;
 
+import com.d1gaming.library.challenge.Challenge;
 import com.d1gaming.library.team.Team;
-import com.d1gaming.library.tournament.Tournament;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class UserTournamentRequest {
+public class UserChallengeRequest {
 
 	@JsonProperty
-	private Tournament tournament;
+	private Challenge challenge;
 	
 	@JsonProperty
 	private Team team;
@@ -17,22 +17,23 @@ public class UserTournamentRequest {
 	@JsonProperty
 	private String userId;
 	
-	public UserTournamentRequest() {
+	public UserChallengeRequest() {
 		super();
 	}
-	
-	public UserTournamentRequest(Tournament tournament, Team team, String userId) {
-		this.tournament = tournament;
+
+	public UserChallengeRequest(Challenge challenge, Team team, String userId) {
+		super();
+		this.challenge = challenge;
 		this.team = team;
 		this.userId = userId;
 	}
 
-	public Tournament getTournament() {
-		return tournament;
+	public Challenge getChallenge() {
+		return challenge;
 	}
 
-	public void setTournament(Tournament tournament) {
-		this.tournament = tournament;
+	public void setChallenge(Challenge challenge) {
+		this.challenge = challenge;
 	}
 
 	public Team getTeam() {
@@ -50,5 +51,5 @@ public class UserTournamentRequest {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
+	
 }

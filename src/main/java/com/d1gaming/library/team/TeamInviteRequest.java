@@ -1,5 +1,6 @@
 package com.d1gaming.library.team;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.d1gaming.library.user.User;
@@ -7,7 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class TeamInviteRequest {
+public class TeamInviteRequest implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@JsonProperty
 	private Team teamRequest;

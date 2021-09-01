@@ -1,17 +1,20 @@
 package com.d1gaming.library.team;
 
+import java.io.Serializable;
 import java.util.List;
 
-import com.d1gaming.library.challenge.Challenge;
-import com.d1gaming.library.image.ImageModel;
 import com.d1gaming.library.user.User;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class Team {
+public class Team implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty
 	private String teamId;
 	
@@ -26,9 +29,6 @@ public class Team {
 	
 	@JsonProperty
 	private List<User> teamUsers;
-
-	@JsonProperty
-	private List<Challenge> teamChallenges;
 	
 	@JsonProperty
 	private User teamModerator;
@@ -40,19 +40,33 @@ public class Team {
 	private List<TeamInviteRequest> teamRequests;
 	
 	@JsonProperty
-	private ImageModel teamImage;
+	private transient boolean hasImage = false;
+	
+	@JsonProperty
+	private int teamCodTotalLs;
+	
+	@JsonProperty
+	private int teamCodTotalWs;
+	
+	@JsonProperty
+	private int teamFifaTotalWs;
+	
+	@JsonProperty
+	private int teamFifaTotalLs;
+	
+	@JsonProperty
+	private int teamTotalPlays;
 	
 	public Team(){
 		
 	}
 
 	public Team(String teamCountry, String teamName, List<User> teamUsers, TeamStatus teamStatus, 
-				List<Challenge> teamChallenges, User teamModerator, String teamEmail) {
+				 User teamModerator, String teamEmail) {
 		super();
 		this.teamCountry = teamCountry;
 		this.teamName = teamName;
 		this.teamUsers = teamUsers;
-		this.teamChallenges = teamChallenges;
 		this.teamModerator = teamModerator;
 		this.teamEmail = teamEmail;
 		this.teamStatus = teamStatus;
@@ -106,14 +120,6 @@ public class Team {
 		this.teamUsers = teamUsers;
 	}
 
-	public List<Challenge> getTeamChallenges() {
-		return this.teamChallenges;
-	}
-
-	public void setTeamChallenges(List<Challenge> teamChallenges) {
-		this.teamChallenges = teamChallenges;
-	}
-
 	public User getTeamModerator() {
 		return teamModerator;
 	}
@@ -138,12 +144,52 @@ public class Team {
 		this.teamRequests = teamRequests;
 	}
 
-	public ImageModel getTeamImage() {
-		return teamImage;
+	public int getTeamCodTotalLs() {
+		return teamCodTotalLs;
 	}
 
-	public void setTeamImage(ImageModel teamImage) {
-		this.teamImage = teamImage;
+	public void setTeamCodTotalLs(int teamCodTotalLs) {
+		this.teamCodTotalLs = teamCodTotalLs;
+	}
+
+	public int getTeamCodTotalWs() {
+		return teamCodTotalWs;
+	}
+
+	public void setTeamCodTotalWs(int teamCodTotalWs) {
+		this.teamCodTotalWs = teamCodTotalWs;
+	}
+
+	public int getTeamFifaTotalWs() {
+		return teamFifaTotalWs;
+	}
+
+	public void setTeamFifaTotalWs(int teamFifaTotalWs) {
+		this.teamFifaTotalWs = teamFifaTotalWs;
+	}
+
+	public int getTeamFifaTotalLs() {
+		return teamFifaTotalLs;
+	}
+
+	public void setTeamFifaTotalLs(int teamFifaTotalLs) {
+		this.teamFifaTotalLs = teamFifaTotalLs;
+	}
+
+	public int getTeamTotalPlays() {
+		return teamTotalPlays;
+	}
+
+	public void setTeamTotalPlays(int teamTotalPlays) {
+		this.teamTotalPlays = teamTotalPlays;
+	}
+
+	public boolean ishasImage() {
+		return hasImage;
+	}
+
+	public void setHasImage(boolean hasImage) {
+		this.hasImage = hasImage;
 	}
 
 }

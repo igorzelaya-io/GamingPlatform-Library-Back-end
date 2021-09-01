@@ -1,9 +1,9 @@
  package com.d1gaming.library.user;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.d1gaming.library.image.ImageModel;
 import com.d1gaming.library.role.Role;
 import com.d1gaming.library.team.Team;
 import com.d1gaming.library.team.TeamInviteRequest;
@@ -11,8 +11,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class User {
+public class User implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty
 	private String userId;
 	
@@ -53,7 +58,7 @@ public class User {
 	private List<TeamInviteRequest> userTeamRequests;
 	
 	@JsonProperty
-	private ImageModel userImage;
+	private transient boolean hasImage;
 	
 	@JsonProperty
 	private List<Role> userRoles = new ArrayList<>();
@@ -62,10 +67,19 @@ public class User {
 	private List<UserTournament> userTournaments;
 	
 	@JsonProperty
-	private int userTotalWs;
+	private List<UserChallenge> userChallenges;
 	
 	@JsonProperty
-	private int userTotalLs;
+	private int userCodTotalWs;
+	
+	@JsonProperty
+	private int userCodTotalLs;
+	
+	@JsonProperty
+	private int userFifaTotalLs;
+	
+	@JsonProperty
+	private int userFifaTotalWs;
 	
 	public User(){
 		super();
@@ -103,7 +117,7 @@ public class User {
 	public User(String userRealName, String userName, String userPassword, String userEmail, UserStatus userStatus, 
 			    List<Team> userTeams, List<TeamInviteRequest> userTeamInvites,	
 			    String userCountry, Map<String, Object> userBirthDate, double userCash, int userTokens, int userTotalWs, int userTotalLs,
-			    List<UserTournament> userTournaments) {
+			    int userFifaTotalWs, int userFifaTotalLs, List<UserTournament> userTournaments, List<UserChallenge> userChallenges) {
 		this.userRealName = userRealName; 
 		this.userName = userName;
 		this.userPassword = userPassword;
@@ -115,9 +129,12 @@ public class User {
 		this.userTokens = userTokens;
 		this.userTeams = userTeams;
 		this.userTeamRequests = userTeamInvites;
-		this.userTotalWs = userTotalWs;
-		this.userTotalLs = userTotalLs;
+		this.userCodTotalWs = userTotalWs;
+		this.userCodTotalLs = userTotalLs;
+		this.userFifaTotalWs = userFifaTotalWs;
+		this.userFifaTotalLs = userFifaTotalLs;
 		this.userTournaments = userTournaments;
+		this.userChallenges = userChallenges;
 	}
 
 	public String getUserId() {
@@ -224,14 +241,6 @@ public class User {
 		this.userTeamRequests = userTeamRequests;
 	}
 
-	public ImageModel getUserImage() {
-		return userImage;
-	}
-
-	public void setUserImage(ImageModel userImage) {
-		this.userImage = userImage;
-	}
-
 	public UserStatus getUserStatusCode() {
 		return userStatusCode;
 	}
@@ -240,20 +249,36 @@ public class User {
 		this.userStatusCode = userStatusCode;
 	}
 
-	public int getUserTotalWs() {
-		return userTotalWs;
+	public int getUserCodTotalWs() {
+		return userCodTotalWs;
 	}
 
-	public void setUserTotalWs(int userTotalWs) {
-		this.userTotalWs = userTotalWs;
+	public void setUserCodTotalWs(int userCodTotalWs) {
+		this.userCodTotalWs = userCodTotalWs;
 	}
 
-	public int getUserTotalLs() {
-		return userTotalLs;
+	public int getUserCodTotalLs() {
+		return userCodTotalLs;
 	}
 
-	public void setUserTotalLs(int userTotalLs) {
-		this.userTotalLs = userTotalLs;
+	public void setUserCodTotalLs(int userCodTotalLs) {
+		this.userCodTotalLs = userCodTotalLs;
+	}
+
+	public int getUserFifaTotalLs() {
+		return userFifaTotalLs;
+	}
+
+	public void setUserFifaTotalLs(int userFifaTotalLs) {
+		this.userFifaTotalLs = userFifaTotalLs;
+	}
+
+	public int getUserFifaTotalWs() {
+		return userFifaTotalWs;
+	}
+
+	public void setUserFifaTotalWs(int userFifaTotalWs) {
+		this.userFifaTotalWs = userFifaTotalWs;
 	}
 
 	public List<UserTournament> getUserTournaments() {
@@ -262,5 +287,21 @@ public class User {
 
 	public void setUserTournaments(List<UserTournament> userTournaments) {
 		this.userTournaments = userTournaments;
+	}
+
+	public List<UserChallenge> getUserChallenges() {
+		return userChallenges;
+	}
+
+	public void setUserChallenges(List<UserChallenge> userChallenges) {
+		this.userChallenges = userChallenges;
+	}
+
+	public boolean isHasImage() {
+		return hasImage;
+	}
+
+	public void setHasImage(boolean hasImage) {
+		this.hasImage = hasImage;
 	}
 }

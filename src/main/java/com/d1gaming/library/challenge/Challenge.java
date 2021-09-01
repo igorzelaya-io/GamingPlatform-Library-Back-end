@@ -1,42 +1,61 @@
 package com.d1gaming.library.challenge;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.Map;
 
 import com.d1gaming.library.team.Team;
-import com.d1gaming.library.user.User;
+import com.d1gaming.library.tournament.TournamentTeamSize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class Challenge {
+public class Challenge implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty
 	private String challengeId;
 	
 	@JsonProperty
-	private String challengeName;
+	private String challengeName; 
 	
 	@JsonProperty
-	private User challengeUserAdmin;
+	private String challengeGame;
+
+	@JsonProperty
+	private String challengeCodGameMode;
+	
+	@JsonProperty
+	private String challengeGameMode;
+	
+	@JsonProperty
+	private String challengePlatforms;
+	
+	@JsonProperty
+	private String challengeMatchesNumber;
+	
+	@JsonProperty
+	private String challengeModeratorId;
+	
+	@JsonProperty
+	private TournamentTeamSize challengeNumberOfPlayersPerTeam;
 	
 	@JsonProperty
 	private ChallengeStatus challengeStatus;
-	//ASSIGN CHALLENGE STATUS ON CHALLENGE CREATION
 	
 	@JsonProperty
 	private Date challengeDate;
-	
-	@JsonProperty
-	private Map<String,Object> challengeHostPlayers;
-
-	@JsonProperty
-	private Map<String,Object> challengeOpponentPlayers;
-	
+		
 	@JsonProperty
 	private Team challengeHostTeam;
 	
 	@JsonProperty
-	private Team challengeOpponentTeam;
+	private Team challengeAwayTeam;
+	
+	@JsonProperty
+	private Team challengeWinningTeam;
 	
 	@JsonProperty
 	private double challengeCashPrize;
@@ -44,25 +63,42 @@ public class Challenge {
 	@JsonProperty
 	private double challengeTokenFee;
 	
+	@JsonProperty
+	private String challengeRegion;
+	
+	@JsonProperty
+	private boolean startedChallenge;
+	
+	@JsonProperty
+	private int numberOfPlayedMatches;
+	
 	public Challenge(){
 		super();
-	}
-	
-	public Challenge(String challengeId, String challengeName, User challengeUserAdmin,ChallengeStatus challengeStatus, 
-					 Date challengeDate, Map<String,Object> challengeHost, Map<String, Object> challengeOpponent ,
-					 Team challengeHostTeam,Team challengeOpponentTeam, double challengeCashPrice, double challengeTokenFee) {
-		
+	} 
+
+	public Challenge(String challengeId, String challengeName, String challengeGame,
+			String challengeCodGameMode, String challengeMatchesNumber,
+			String challengeModeratorId, TournamentTeamSize challengeNumberOfPlayersPerTeam,
+			ChallengeStatus challengeStatus, Date challengeDate, Team challengeHostTeam, Team challengeOpponentTeam,
+			Team challengeWinningTeam, double challengeCashPrize, double challengeTokenFee, String challengeRegion,
+			boolean startedChallenge) {
+		super();
 		this.challengeId = challengeId;
 		this.challengeName = challengeName;
-		this.challengeUserAdmin = challengeUserAdmin;
+		this.challengeGame = challengeGame;
+		this.challengeCodGameMode = challengeCodGameMode;
+		this.challengeMatchesNumber = challengeMatchesNumber;
+		this.challengeModeratorId = challengeModeratorId;
+		this.challengeNumberOfPlayersPerTeam = challengeNumberOfPlayersPerTeam;
 		this.challengeStatus = challengeStatus;
 		this.challengeDate = challengeDate;
-		this.challengeHostPlayers = challengeHost;
-		this.challengeOpponentPlayers = challengeOpponent;
 		this.challengeHostTeam = challengeHostTeam;
-		this.challengeOpponentTeam = challengeOpponentTeam;
-		this.challengeCashPrize = challengeCashPrice;
+		this.challengeAwayTeam = challengeOpponentTeam;
+		this.challengeWinningTeam = challengeWinningTeam;
+		this.challengeCashPrize = challengeCashPrize;
 		this.challengeTokenFee = challengeTokenFee;
+		this.challengeRegion = challengeRegion;
+		this.startedChallenge = startedChallenge;
 	}
 
 	public String getChallengeId() {
@@ -80,13 +116,53 @@ public class Challenge {
 	public void setChallengeName(String challengeName) {
 		this.challengeName = challengeName;
 	}
-	
-	public User getChallengeUserAdmin() {
-		return this.challengeUserAdmin;
+
+	public String getChallengeGame() {
+		return challengeGame;
 	}
-	
-	public void setChallengeUserAdmin(User user) {
-		this.challengeUserAdmin = user;
+
+	public void setChallengeGame(String challengeGame) {
+		this.challengeGame = challengeGame;
+	}
+
+	public String getChallengeCodGameMode() {
+		return challengeCodGameMode;
+	}
+
+	public void setChallengeCodGameMode(String challengeCodGameMode) {
+		this.challengeCodGameMode = challengeCodGameMode;
+	}
+
+	public String getChallengePlatforms() {
+		return challengePlatforms;
+	}
+
+	public void setChallengePlatforms(String challengePlatforms) {
+		this.challengePlatforms = challengePlatforms;
+	}
+
+	public String getChallengeMatchesNumber() {
+		return challengeMatchesNumber;
+	}
+
+	public void setChallengeMatchesNumber(String challengeMatchesNumber) {
+		this.challengeMatchesNumber = challengeMatchesNumber;
+	}
+
+	public String getChallengeModeratorId() {
+		return challengeModeratorId;
+	}
+
+	public void setChallengeModeratorId(String challengeModeratorId) {
+		this.challengeModeratorId = challengeModeratorId;
+	}
+
+	public TournamentTeamSize getChallengeNumberOfPlayersPerTeam() {
+		return challengeNumberOfPlayersPerTeam;
+	}
+
+	public void setChallengeNumberOfPlayersPerTeam(TournamentTeamSize challengeNumberOfPlayersPerTeam) {
+		this.challengeNumberOfPlayersPerTeam = challengeNumberOfPlayersPerTeam;
 	}
 
 	public ChallengeStatus getChallengeStatus() {
@@ -105,22 +181,6 @@ public class Challenge {
 		this.challengeDate = challengeDate;
 	}
 
-	public Map<String,Object> getChallengeHostPlayers() {
-		return challengeHostPlayers;
-	}
-
-	public void setChallengeHostPlayers(Map<String,Object> challengeHost) {
-		this.challengeHostPlayers = challengeHost;
-	}
-
-	public Map<String,Object> getChallengeOpponentPlayers() {
-		return challengeOpponentPlayers;
-	}
-
-	public void setChallengeOpponentPlayers(Map<String,Object> challengeOpponent) {
-		this.challengeOpponentPlayers = challengeOpponent;
-	}
-
 	public Team getChallengeHostTeam() {
 		return challengeHostTeam;
 	}
@@ -129,12 +189,20 @@ public class Challenge {
 		this.challengeHostTeam = challengeHostTeam;
 	}
 
-	public Team getChallengeOpponentTeam() {
-		return challengeOpponentTeam;
+	public Team getChallengeAwayTeam() {
+		return challengeAwayTeam;
 	}
 
-	public void setChallengeOpponentTeam(Team challengeOpponentTeam) {
-		this.challengeOpponentTeam = challengeOpponentTeam;
+	public void setChallengeAwayTeam(Team challengeAwayTeam) {
+		this.challengeAwayTeam = challengeAwayTeam;
+	}
+
+	public Team getChallengeWinningTeam() {
+		return challengeWinningTeam;
+	}
+
+	public void setChallengeWinningTeam(Team challengeWinningTeam) {
+		this.challengeWinningTeam = challengeWinningTeam;
 	}
 
 	public double getChallengeCashPrize() {
@@ -151,6 +219,38 @@ public class Challenge {
 
 	public void setChallengeTokenFee(double challengeTokenFee) {
 		this.challengeTokenFee = challengeTokenFee;
+	}
+
+	public String getChallengeRegion() {
+		return this.challengeRegion;
+	}
+
+	public void setChallengeRegion(String challengeRegion) {
+		this.challengeRegion = challengeRegion;
+	}
+
+	public boolean isStartedChallenge() {
+		return startedChallenge;
+	}
+
+	public void setStartedChallenge(boolean startedChallenge) {
+		this.startedChallenge = startedChallenge;
+	}
+
+	public String getChallengeGameMode() {
+		return challengeGameMode;
+	}
+
+	public void setChallengeGameMode(String challengeGameMode) {
+		this.challengeGameMode = challengeGameMode;
+	}
+
+	public int getNumberOfPlayedMatches() {
+		return numberOfPlayedMatches;
+	}
+
+	public void setNumberOfPlayedMatches(int numberOfPlayedMatches) {
+		this.numberOfPlayedMatches = numberOfPlayedMatches;
 	}
 
 }

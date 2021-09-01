@@ -7,48 +7,51 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class ImageModel {
 
 	@JsonProperty
-	private String imageName;
+	private String dtoID;
 	
 	@JsonProperty
-	private String imageType;
+	private String dtoName;
 	
 	@JsonProperty
-	private byte[] imageByte;
+	private String imageModelDocumentId;
+	
+	@JsonProperty
+	private String imageBytes;
 
 	public ImageModel() {
 		
 	}
-	
-	public ImageModel(String imageName, String imageType, byte[] imageByte) {
-		this.imageName = imageName;
-		this.imageType = imageType;
-		this.imageByte = imageByte;
+
+	public String getDtoID() {
+		return dtoID;
 	}
 
-	public String getImageName() {
-		return imageName;
+	public void setDtoID(String dtoID) {
+		this.dtoID = dtoID;
 	}
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
+	public String getDtoName() {
+		return dtoName;
 	}
 
-	public String getImageType() {
-		return imageType;
+	public void setDtoName(String dtoName) {
+		this.dtoName = dtoName;
 	}
 
-	public void setImageType(String imageType) {
-		this.imageType = imageType;
+	public String getImageModelDocumentId() {
+		return imageModelDocumentId;
 	}
 
-	public byte[] getImageByte() {
-		return imageByte;
+	public void setImageModelDocumentId(String imageModelDocumentId) {
+		this.imageModelDocumentId = imageModelDocumentId;
 	}
 
-	public void setImageByte(byte[] imageByte) {
-		this.imageByte = imageByte;
+	public String getImageBytes() {
+		return imageBytes;
 	}
-	
-	
 
+	public void setImageBytes(String imageBytes) {
+		this.imageBytes = imageBytes;
+	}
+		
 }

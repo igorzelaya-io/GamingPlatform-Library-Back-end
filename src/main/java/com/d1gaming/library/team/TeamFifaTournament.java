@@ -3,7 +3,6 @@ package com.d1gaming.library.team;
 import java.util.List;
 
 import com.d1gaming.library.match.Match;
-import com.d1gaming.library.tournament.Tournament;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -11,10 +10,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 public class TeamFifaTournament {
 
 	@JsonProperty
-	private String teamTournamentId;
+	private String teamFifaTournamentId;
 	
 	@JsonProperty
-	private Tournament teamFifaTournament;
+	private String teamTournamentId;
 	
 	@JsonProperty
 	private List<Match> teamTournamentMatches;
@@ -50,12 +49,12 @@ public class TeamFifaTournament {
 		super();
 	}
 
-	public TeamFifaTournament(Tournament teamTournament, List<Match> teamTournamentMatches, int teamTournamentPoints, 
+	public TeamFifaTournament(String teamTournamentId, List<Match> teamTournamentMatches, int teamTournamentPoints, 
 			int teamTournamentNumberOfMatchesPlayed, int teamTournamentMatchesDraws,
 			int teamTournamentMatchesWins, int teamTournamentMatchesLosses, int teamTournamentGoalsScored,
 			int teamTournamentGoalsReceived, int teamTournamentGoalsDifference, TeamTournamentStatus teamTournamentStatus) {
 		super();
-		this.teamFifaTournament = teamTournament;
+		this.teamTournamentId = teamTournamentId;
 		this.teamTournamentMatches = teamTournamentMatches;
 		this.teamTournamentPoints = teamTournamentPoints;
 		this.teamTournamentNumberOfMatchesPlayed = teamTournamentNumberOfMatchesPlayed; 
@@ -68,20 +67,20 @@ public class TeamFifaTournament {
 		this.teamTournamentStatus = teamTournamentStatus;
 	}
 
+	public String getTeamFifaTournamentId() {
+		return this.teamFifaTournamentId;
+	}
+
+	public void setTeamFifaTournamentId(String teamFifaTournamentId) {
+		this.teamFifaTournamentId = teamFifaTournamentId;
+	}
+
 	public String getTeamTournamentId() {
 		return teamTournamentId;
 	}
 
 	public void setTeamTournamentId(String teamTournamentId) {
 		this.teamTournamentId = teamTournamentId;
-	}
-
-	public Tournament getTeamTournament() {
-		return teamFifaTournament;
-	}
-
-	public void setTeamTournament(Tournament teamTournament) {
-		this.teamFifaTournament = teamTournament;
 	}
 
 	public int getTeamTournamentMatchesWins() {

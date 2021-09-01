@@ -1,18 +1,28 @@
 package com.d1gaming.library.match;
 
+import java.io.Serializable;
+
 import com.d1gaming.library.team.Team;
 import com.d1gaming.library.tournament.Tournament;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class Match {
+public class Match implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@JsonProperty
 	private String matchId;
 	
 	@JsonProperty
 	private Tournament matchTournament;
+	
+	@JsonProperty
+	private String matchChallengeId;
 	
 	@JsonProperty
 	private Team matchLocalTeam;
@@ -33,13 +43,22 @@ public class Match {
 	private Team matchWinningTeam;
 	
 	@JsonProperty
-	private boolean uploaded = false;
+	private boolean localTeamUploaded = false;
 	
 	@JsonProperty
-	private int matchRoundInTournament;
+	private boolean awayTeamUploaded = false;
+	
+	@JsonProperty
+	private boolean isDisputedMatch = false;
+	
+	@JsonProperty
+	private boolean hasImage = false;
+	
+	@JsonProperty
+	private String matchGame;
 	
 	public Match(Tournament matchTournament, Team matchLocalTeam, Team matchAwayTeam,
-			int localTeamMatchScore, int awayTeamMatchScore, MatchStatus matchStatus) {
+			int localTeamMatchScore, int awayTeamMatchScore, MatchStatus matchStatus, String matchGame) {
 		super();
 		this.matchTournament = matchTournament;
 		this.matchLocalTeam = matchLocalTeam;
@@ -47,6 +66,19 @@ public class Match {
 		this.localTeamMatchScore = localTeamMatchScore;
 		this.awayTeamMatchScore = awayTeamMatchScore;
 		this.matchStatus = matchStatus;
+		this.matchGame = matchGame;
+	}
+	
+	public Match(String matchChallengeId, Team matchLocalTeam, Team matchAwayTeam,
+			int localTeamMatchScore, int awayTeamMatchScore, MatchStatus matchStatus, String matchGame) {
+		super();
+		this.matchChallengeId = matchChallengeId;
+		this.matchLocalTeam = matchLocalTeam;
+		this.matchAwayTeam = matchAwayTeam;
+		this.localTeamMatchScore = localTeamMatchScore;
+		this.awayTeamMatchScore = awayTeamMatchScore;
+		this.matchStatus = matchStatus;
+		this.matchGame = matchGame;
 	}
 
 	public Match() {
@@ -117,22 +149,52 @@ public class Match {
 		this.matchWinningTeam = matchWinningTeam;
 	}
 
-	public boolean isUploaded() {
-		return uploaded;
+	public boolean isLocalTeamUploaded() {
+		return localTeamUploaded;
 	}
 
-	public void setUploaded(boolean uploaded) {
-		this.uploaded = uploaded;
+	public void setLocalTeamUploaded(boolean localTeamUploaded) {
+		this.localTeamUploaded = localTeamUploaded;
 	}
 
-	public int getMatchRoundInTournament() {
-		return matchRoundInTournament;
+	public boolean isAwayTeamUploaded() {
+		return awayTeamUploaded;
 	}
 
-	public void setMatchRoundInTournament(int matchRoundInTournament) {
-		this.matchRoundInTournament = matchRoundInTournament;
+	public void setAwayTeamUploaded(boolean awayTeamUploaded) {
+		this.awayTeamUploaded = awayTeamUploaded;
+	}
+
+	public boolean isHasImage() {
+		return hasImage;
+	}
+
+	public void setHasImage(boolean hasImage) {
+		this.hasImage = hasImage;
+	}
+
+	public String getMatchChallengeId() {
+		return matchChallengeId;
+	}
+
+	public void setMatchChallengeId(String matchChallengeId) {
+		this.matchChallengeId = matchChallengeId;
+	}
+
+	public boolean isDisputedMatch() {
+		return isDisputedMatch;
+	}
+
+	public void setDisputedMatch(boolean isDisputedMatch) {
+		this.isDisputedMatch = isDisputedMatch;
+	}
+	
+	public String getMatchGame() {
+		return this.matchGame;
+	}
+	
+	public void setMatchGame(String matchGame) {
+		this.matchGame = matchGame;
 	}
 	
 }
-
-

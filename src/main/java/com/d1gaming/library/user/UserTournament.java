@@ -1,5 +1,6 @@
 package com.d1gaming.library.user;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.d1gaming.library.match.Match;
@@ -10,10 +11,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize
-public class UserTournament {
+public class UserTournament implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty
-	private Tournament userTournament;
+	private String userTournamentId;
 	
 	@JsonProperty
 	private Team userTournamentTeam;
@@ -34,10 +40,10 @@ public class UserTournament {
 		super();
 	}
 	
-	public UserTournament(Tournament userTournaments, Team userTournamentTeam, int userTournamentMatchesWins, int userTournamentMatchesLosses, 
+	public UserTournament(String userTournamentId, Team userTournamentTeam, int userTournamentMatchesWins, int userTournamentMatchesLosses, 
 						List<Match> userTournamentMatches, TeamTournamentStatus userTournamentStatus) {
 		super();
-		this.userTournament = userTournaments; 
+		this.userTournamentId = userTournamentId; 
 		this.userTournamentMatchesWins = userTournamentMatchesWins;
 		this.userTournamentMatchesLosses = userTournamentMatchesLosses;
 		this.userTournamentTeam = userTournamentTeam;
@@ -46,12 +52,12 @@ public class UserTournament {
 		
 	}
 
-	public Tournament getUserTournament() {
-		return userTournament;
+	public String getUserTournamentId() {
+		return userTournamentId;
 	}
 
-	public void setUserTournament(Tournament userTournament) {
-		this.userTournament = userTournament;
+	public void setUserTournamentId(String userTournamentId) {
+		this.userTournamentId = userTournamentId;
 	}
 
 	public Team getUserTournamentTeam() {
